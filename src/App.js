@@ -1,11 +1,11 @@
-import './App.css';
 import Header from './components/Header';
+import { AppStyled } from './styles';
 
 function App() {
   return (
-    <div>
+    <AppStyled>
       <Header />
-    </div>
+    </AppStyled>
   );
 }
 
