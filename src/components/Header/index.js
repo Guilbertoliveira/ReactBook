@@ -1,5 +1,7 @@
 import { HeaderComponent, HeaderLogo } from './styles';
 import logo from './logo.svg';
+import Nav from 'components/Nav';
+import Icone from 'components/Icone';
 
 export default function Header() {
   return (
@@ -10,6 +12,8 @@ export default function Header() {
           <strong>Alura</strong>Books
         </p>
       </HeaderLogo>
+      <Nav />
+      <Icone />
     </HeaderComponent>
   );
 }
