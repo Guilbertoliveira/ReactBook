@@ -20,3 +20,8 @@ export const SubTitleStyled = styled.h3`
   font-weight: 500;
   margin-bottom: 40px;
 `;
+
+export const ShowcaseBookStyled = styled.section`
+  display: flex;
+  justify-content: center;
+`;
