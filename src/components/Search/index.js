@@ -1,9 +1,22 @@
 import { Input } from 'components/Input';
-import { SearchStyled, SubTitleStyled, TitleStyled } from './styles';
+import {
+  SearchStyled,
+  SubTitleStyled,
+  TitleStyled,
+  ShowcaseBookStyled,
+} from './styles';
 import { useState } from 'react';
+import { book } from './dates';
 
 export default function Search() {
-  const [typedText, setTypedText] = useState([]);
+  const [filteredBooks, setFilteredBooks] = useState(book);
+
+  function filterBook(escrita) {
+    console.log(book.filter((e) => e.name.includes(escrita)));
+    setFilteredBooks(
+      book.filter((e) => e.name.toLowerCase().includes(escrita.toLowerCase()))
+    );
+  }
 
   return (
     <SearchStyled>
@@ -12,10 +25,20 @@ export default function Search() {
       <Input
         placeholder="Escreva sua próxima leitura"
         onChange={(event) => {
-          setTypedText(event.target.value);
+          filterBook(event.target.value);
         }}
       />
-      <h1>{typedText}</h1>
+      <ShowcaseBookStyled>
+        {filteredBooks.map((item) => {
+          return (
+            <section key={item.id}>
+              <h1>{item.name}</h1>
+              <h2>{item.id}</h2>
+              <img src={item.src} alt={`imagem do livro ${item.name}`}></img>
+            </section>
+          );
+        })}
+      </ShowcaseBookStyled>
     </SearchStyled>
   );
 }

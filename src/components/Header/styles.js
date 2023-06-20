@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const HeaderStyled = styled.header`
   background-color: white;
-  width: 100vw;
   box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.54);
   display: flex;
   flex-wrap: wrap;
