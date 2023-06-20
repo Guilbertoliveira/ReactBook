@@ -1,4 +1,6 @@
+<div align="center">
 <h1>ReactBook</h1>
+</div>
 
 <h2>:hammer:Project Status:hammer:</h2>
 
@@ -11,6 +13,7 @@
 <h2>Technologies used</h2>
     
 <h2> Project link </h2>
+<a href="https://react-book-orpin.vercel.app/">Vercel Link</a>
 
 <h2>Contributing</h2>
 <ol>

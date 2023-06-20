@@ -1,6 +1,6 @@
 import { NavStyled, ListStyled, LiStyled } from './styles';
 
-export default function Nav() {
+export default function NavOptions() {
   const textOptions = ['Categorias', 'Favoritos', 'Minha estante'];
 
   return (
