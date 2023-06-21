@@ -13,6 +13,7 @@ export const Input = styled.input`
   &::placeholder {
     color: #fff;
     font-size: 16px;
+    font-family: 'Acme', sans-serif;
   }
 
   &:focus {
