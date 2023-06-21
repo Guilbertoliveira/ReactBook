@@ -6,6 +6,7 @@ export const SearchStyled = styled.section`
   text-align: center;
   padding: 85px 0;
   width: 100%;
+  font-family: 'Acme', sans-serif;
 `;
 
 export const TitleStyled = styled.h2`
@@ -24,4 +25,5 @@ export const SubTitleStyled = styled.h3`
 export const ShowcaseBookStyled = styled.section`
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 `;

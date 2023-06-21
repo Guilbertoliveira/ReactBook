@@ -7,6 +7,7 @@ import {
 } from './styles';
 import { useState } from 'react';
 import { book } from './dates';
+import Card from 'components/Card';
 
 export default function Search() {
   const [filteredBooks, setFilteredBooks] = useState(book);
@@ -31,11 +32,10 @@ export default function Search() {
       <ShowcaseBookStyled>
         {filteredBooks.map((item) => {
           return (
-            <section key={item.id}>
+            <Card key={item.id}>
               <h1>{item.name}</h1>
-              <h2>{item.id}</h2>
               <img src={item.src} alt={`imagem do livro ${item.name}`}></img>
-            </section>
+            </Card>
           );
         })}
       </ShowcaseBookStyled>
