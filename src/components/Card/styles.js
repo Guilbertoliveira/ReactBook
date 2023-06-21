@@ -9,3 +9,8 @@ export const CardStyled = styled.section`
     border-radius: 3px;
   }
 `;
+
+export const ImgStyled = styled.img`
+box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.03);
+
+`
