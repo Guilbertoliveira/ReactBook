@@ -32,10 +32,7 @@ export default function Search() {
       <ShowcaseBookStyled>
         {filteredBooks.map((item) => {
           return (
-            <Card key={item.id}>
-              <h1>{item.name}</h1>
-              <img src={item.src} alt={`imagem do livro ${item.name}`}></img>
-            </Card>
+            <Card key={item.id} title={item.name} imageUrl={item.src} />
           );
         })}
       </ShowcaseBookStyled>
