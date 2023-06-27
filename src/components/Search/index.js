@@ -31,9 +31,7 @@ export default function Search() {
       />
       <ShowcaseBookStyled>
         {filteredBooks.map((item) => {
-          return (
-            <Card key={item.id} title={item.name} imageUrl={item.src} />
-          );
+          return <Card key={item.id} title={item.name} imageUrl={item.src} />;
         })}
       </ShowcaseBookStyled>
     </SearchStyled>

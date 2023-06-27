@@ -1,14 +1,21 @@
+import { Link } from 'react-router-dom';
 import { NavStyled, ListStyled, LiStyled } from './styles';
 
 export default function NavOptions() {
-  const textOptions = ['Categorias', 'Favoritos', 'Minha estante'];
+  const textOptions = [
+    { titleNav: 'Categorias', url: 'categoria' },
+    { titleNav: 'Favoritos', url: 'favoritos' },
+    { titleNav: 'Minha estante', url: 'estante' },
+  ];
 
   return (
     <NavStyled>
-      <ListStyled>
+      <ListStyled style={{}}>
         {textOptions.map((text) => (
           <LiStyled>
-            <p>{text}</p>
+            <Link to={text.url} style={{ textDecoration: 'none' }}>
+              {text.titleNav}
+            </Link>
           </LiStyled>
         ))}
       </ListStyled>

@@ -1,17 +1,7 @@
-import Search from 'components/Search';
-import Header from './components/Header';
-import { AppStyled } from './styles';
-import Releases from 'components/Releases';
-import Section from 'components/Section';
+import RoutesPage from 'routes';
 
 function App() {
-  return (
-    <AppStyled>
-      <Header />
-      <Search />
-      <Releases />
-    </AppStyled>
-  );
+  return <RoutesPage></RoutesPage>;
 }
 
 export default App;
