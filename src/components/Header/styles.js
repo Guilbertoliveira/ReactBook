@@ -8,7 +8,7 @@ export const HeaderStyled = styled.header`
   justify-content: space-evenly;
 `;
 
-export const HeaderLogo = styled.div`
+export const HeaderLogoStyled = styled.div`
   display: flex;
   font-size: 20px;
   gap: 10px;

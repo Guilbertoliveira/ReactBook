@@ -1,9 +1,7 @@
-import RoutesPage from "routes";
+import RoutesPage from 'routes';
 
 function App() {
-  return (
-    <RoutesPage></RoutesPage>
-  )
+  return <RoutesPage></RoutesPage>;
 }
 
 export default App;

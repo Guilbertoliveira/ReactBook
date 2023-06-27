@@ -1,5 +1,10 @@
+import Search from 'components/Search';
+import { AppStyled } from 'pages/Home/styles';
+
 export default function Favorite() {
-    return (
-        <h1>Favorite</h1>
-    )
+  return (
+    <AppStyled>
+      <Search />
+    </AppStyled>
+  );
 }

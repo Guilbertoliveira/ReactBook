@@ -1,7 +1,5 @@
-import { FooterStyled } from './styles'
+import { FooterStyled } from './styles';
 
 export default function Footer() {
-    return (
-        <FooterStyled>oi</FooterStyled>
-    )
+  return <FooterStyled></FooterStyled>;
 }
