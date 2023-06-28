@@ -5,12 +5,23 @@ import {
   TitleStyled,
   ShowcaseBookStyled,
 } from './styles';
-import { useState } from 'react';
-import { book } from './dates';
+import { useEffect, useState } from 'react';
 import Card from 'components/Card';
+import { getBooks } from 'services/books';
 
 export default function Search() {
-  const [filteredBooks, setFilteredBooks] = useState(book);
+  const [filteredBooks, setFilteredBooks] = useState([]);
+  const [book, setBook] = useState([])
+
+  useEffect(() => {
+    fetchBooks()
+  }, [])
+
+  async function fetchBooks() {
+    const booksAPI = await getBooks()
+    setBook(booksAPI)
+  }
+
 
   function filterBook(escrita) {
     console.log(book.filter((e) => e.name.includes(escrita)));
@@ -18,6 +29,7 @@ export default function Search() {
       book.filter((e) => e.name.toLowerCase().includes(escrita.toLowerCase()))
     );
   }
+
 
   return (
     <SearchStyled>
