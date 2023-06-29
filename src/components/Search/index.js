@@ -10,8 +10,9 @@ import Card from 'components/Card';
 import { getBooks } from 'services/books';
 
 export default function Search() {
-  const [filteredBooks, setFilteredBooks] = useState([]);
   const [book, setBook] = useState([])
+  const [filteredBooks, setFilteredBooks] = useState([]);
+
 
   useEffect(() => {
     fetchBooks()

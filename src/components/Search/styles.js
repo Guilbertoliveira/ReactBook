@@ -26,4 +26,5 @@ export const ShowcaseBookStyled = styled.section`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  gap: 20px;
 `;

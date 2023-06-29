@@ -10,7 +10,7 @@ export default function Releases() {
     <Section
       title={'lançamentos'}
       fontColor={'white'}
-      backgroundColor={'#177485'}
+      backgroundColor={'rgb(0, 47, 90)'}
     >
       <ReleaseSectionStyled>
         {books.map((item) => {

@@ -6,6 +6,8 @@ export const HeaderStyled = styled.header`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  position: fixed;
+  width: 100%;
 `;
 
 export const HeaderLogoStyled = styled.div`

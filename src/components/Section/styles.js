@@ -7,7 +7,7 @@ export const SectionStyled = styled.section`
   font-family: 'Acme', sans-serif;
   font-size: 20px;
   padding: 30px 0px;
-  box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.9);
+  box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.6);
 `;
 
 export const SubTitleStyled = styled.h2`
