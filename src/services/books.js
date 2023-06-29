@@ -1,11 +1,10 @@
 import axios from 'axios'
 
-const booksAPI = axios.create({ baseURL: "http://localhost:8000/book" })  //create base for api
+const booksAPI = axios.create({ baseURL: "http://localhost:8000/book" })  //create base for api, existing other paraments not mandatory
 
 async function getBooks() {
-    const response = await booksAPI.get('/'); // Supondo que sua API esteja configurada corretamente
+    const response = await booksAPI.get('/'); // Assuming your API is configured correctly
     return response.data;
-
 }
 
 export {
