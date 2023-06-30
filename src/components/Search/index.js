@@ -8,6 +8,7 @@ import {
 import { useEffect, useState } from 'react';
 import Card from 'components/Card';
 import { getBooks } from 'services/books';
+import { insertFavorites } from 'services/favorites';
 
 export default function Search() {
   const [book, setBook] = useState([])
@@ -32,6 +33,13 @@ export default function Search() {
   }
 
 
+  async function clickBook(key) {
+    console.log('adicionar')
+    console.log(key)
+    insertFavorites(key)
+  }
+
+
   return (
     <SearchStyled>
       <TitleStyled>Ja sabe por onde começar?</TitleStyled>
@@ -42,9 +50,9 @@ export default function Search() {
           filterBook(event.target.value);
         }}
       />
-      <ShowcaseBookStyled>
+      <ShowcaseBookStyled >
         {filteredBooks.map((item) => {
-          return <Card key={item.id} title={item.name} imageUrl={item.src} />;
+          return <Card key={item.id} title={item.name} imageUrl={item.src} clickBook={clickBook} id={item.id} />;
         })}
       </ShowcaseBookStyled>
     </SearchStyled>

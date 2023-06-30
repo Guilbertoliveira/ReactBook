@@ -1,3 +1,5 @@
+import Section from "components/Section";
+
 export default function MyShelf() {
-  return <h1>MyShelf</h1>;
+  return <Section></Section>;
 }
