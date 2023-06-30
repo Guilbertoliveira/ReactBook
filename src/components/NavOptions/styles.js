@@ -15,7 +15,6 @@ export const ListStyled = styled.ul`
 `;
 
 export const LiStyled = styled.li`
-  color: black;
   font-weight: 400;
   text-transform: uppercase;
 `;

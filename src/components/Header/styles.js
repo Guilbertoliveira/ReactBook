@@ -1,13 +1,15 @@
 import styled from 'styled-components';
 
 export const HeaderStyled = styled.header`
-  background-color: white;
+  background: ${(props) => props.scroll ? "transparent" : "white"};
+  backdrop-filter: blur(5px);
   box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.54);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   position: fixed;
   width: 100%;
+  z-index: 1;
 `;
 
 export const HeaderLogoStyled = styled.div`
