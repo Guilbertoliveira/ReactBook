@@ -15,3 +15,7 @@ export const ImgStyled = styled.img`
   width: 300px;
   height: 420px;
 `;
+
+export const DivFavoriteStyled = styled.div`
+
+`

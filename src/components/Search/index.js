@@ -22,6 +22,7 @@ export default function Search() {
   async function fetchBooks() {
     const booksAPI = await getBooks()
     setBook(booksAPI)
+    setFilteredBooks(booksAPI)
   }
 
 
@@ -52,7 +53,7 @@ export default function Search() {
       />
       <ShowcaseBookStyled >
         {filteredBooks.map((item) => {
-          return <Card key={item.id} title={item.name} imageUrl={item.src} clickBook={clickBook} id={item.id} />;
+          return <Card key={item.id} title={item.name} imageUrl={item.src} clickBook={clickBook} id={item.id} favorite={item.favorite} />;
         })}
       </ShowcaseBookStyled>
     </SearchStyled>

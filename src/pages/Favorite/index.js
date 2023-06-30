@@ -5,7 +5,7 @@ import { FavoritesCardStyled } from "./styles";
 import Section from "components/Section";
 
 export default function Favorite() {
-  const [favorites, setFavorites] = useState([''])
+  const [favorites, setFavorites] = useState([])
 
 
   useEffect(() => {
