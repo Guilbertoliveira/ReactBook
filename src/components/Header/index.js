@@ -8,9 +8,12 @@ import logo from './avatarbook.png';
 import NavOptions from 'components/NavOptions';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import Menu from 'components/Menu';
+
 
 export default function Header() {
   const [scroll, setScroll] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   function scrollStatus() {
     const scrollTop = window.scrollY;
@@ -30,6 +33,11 @@ export default function Header() {
     };
   }, []);
 
+
+  function toggle() {
+    setIsOpen(!isOpen);
+  }
+
   return (
     <HeaderStyled scroll={scroll}>
       <Link to="/" style={{ textDecoration: 'none' }}>
@@ -41,7 +49,8 @@ export default function Header() {
         </HeaderLogoStyled>
       </Link>
       <NavOptions />
-      <IconeMenuStyled scroll={scroll} style={{ fontSize: 50 }} />
+      <IconeMenuStyled scroll={scroll} onClick={() => toggle()} style={{ fontSize: 40 }} />
+      {isOpen && <Menu />}
     </HeaderStyled>
   );
 }

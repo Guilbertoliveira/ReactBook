@@ -11,6 +11,8 @@ export const HeaderStyled = styled.header`
   position: fixed;
   width: 100%;
   z-index: 1;
+  align-items: center;
+  transition: 1s;
 `;
 
 export const HeaderLogoStyled = styled.div`
@@ -19,6 +21,7 @@ export const HeaderLogoStyled = styled.div`
   gap: 10px;
   margin-left: 20px;
   align-items: center;
+
 `;
 
 export const IconeMenuStyled = styled(CgMenuRightAlt)`
