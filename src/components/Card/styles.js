@@ -17,5 +17,7 @@ export const ImgStyled = styled.img`
 `;
 
 export const DivFavoriteStyled = styled.div`
-
+position: relative;
+left: 135px;
+top: 30px;
 `

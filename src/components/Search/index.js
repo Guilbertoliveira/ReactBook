@@ -7,17 +7,18 @@ import {
 } from './styles';
 import { useEffect, useState } from 'react';
 import Card from 'components/Card';
-import { getBooks } from 'services/books';
+import { getBooks, patchBooks } from 'services/books';
 import { insertFavorites } from 'services/favorites';
 
 export default function Search() {
   const [book, setBook] = useState([])
   const [filteredBooks, setFilteredBooks] = useState([]);
 
-
   useEffect(() => {
     fetchBooks()
   }, [])
+
+
 
   async function fetchBooks() {
     const booksAPI = await getBooks()
@@ -34,9 +35,10 @@ export default function Search() {
   }
 
 
-  async function clickBook(key) {
+  async function clickBook(key, favoriteBoolean) {
     console.log('adicionar')
     console.log(key)
+    patchBooks(key, !favoriteBoolean)
     insertFavorites(key)
   }
 

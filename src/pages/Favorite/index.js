@@ -1,6 +1,7 @@
 import Card from "components/Card";
 import { useEffect, useState } from "react";
 import { deleteFavorites, getFavorites } from "services/favorites";
+import { patchBooks } from 'services/books';
 import { FavoritesCardStyled } from "./styles";
 import Section from "components/Section";
 
@@ -20,6 +21,7 @@ export default function Favorite() {
   async function clickBook(key) {
     console.log('remover')
     console.log(key)
+    await patchBooks(key, false)
     await deleteFavorites(key)
     fetchFavorites()
   }
@@ -38,6 +40,7 @@ export default function Favorite() {
               imageUrl={favorite.src}
               clickBook={clickBook}
               id={favorite.id}
+              favorite={true}
             />
           ))
         )}

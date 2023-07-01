@@ -7,7 +7,7 @@ async function getFavorites() {
     return response.data
 }
 
-async function insertFavorites(id, favoriteBoolean) {
+async function insertFavorites(id) {
     await favoriteAPI.post(`/${id}`)
 }
 

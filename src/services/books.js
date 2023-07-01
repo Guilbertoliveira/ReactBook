@@ -7,6 +7,13 @@ async function getBooks() {
     return response.data;
 }
 
+async function patchBooks(id, favoriteBoolean) {
+    await booksAPI.patch(`/${id}`, {
+        "favorite": favoriteBoolean
+    })
+}
+
 export {
-    getBooks
+    getBooks,
+    patchBooks
 }
