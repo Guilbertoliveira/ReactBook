@@ -14,6 +14,7 @@ export default function RoutesPage() {
           <Route path="/favoritos" element={<Favorite />} />
           <Route path="/categoria" element={<Categories />} />
           <Route path="/estante" element={<MyShelf />} />
+          <Route path="*" />
         </Route>
       </Routes>
     </BrowserRouter>

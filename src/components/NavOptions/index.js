@@ -9,7 +9,7 @@ export default function NavOptions() {
     { titleNav: 'Minha estante', url: 'estante' },
   ];
 
-  const [scrollColor, setScrollColor] = useState('')
+  const [scrollColor, setScrollColor] = useState('');
 
   function scrollStatus() {
     const scrollTop = window.scrollY;
@@ -30,7 +30,10 @@ export default function NavOptions() {
       <ListStyled>
         {textOptions.map((text) => (
           <LiStyled>
-            <Link to={text.url} style={{ textDecoration: 'none', color: scrollColor }}>
+            <Link
+              to={text.url}
+              style={{ textDecoration: 'none', color: scrollColor }}
+            >
               {text.titleNav}
             </Link>
           </LiStyled>

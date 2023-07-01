@@ -1,5 +1,5 @@
 import { FooterStyled } from './styles';
 
 export default function Footer() {
-  return <FooterStyled></FooterStyled>;
+  return <FooterStyled>Guilbert</FooterStyled>;
 }
