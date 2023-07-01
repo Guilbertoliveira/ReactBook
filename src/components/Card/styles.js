@@ -5,7 +5,7 @@ export const CardStyled = styled.section`
 
   :hover {
     background-color: rgba(0, 0, 0, 0.05);
-    transform: scale(1.2);
+    transform: scale(1.1);
     border-radius: 3px;
   }
 `;
@@ -17,7 +17,8 @@ export const ImgStyled = styled.img`
 `;
 
 export const DivFavoriteStyled = styled.div`
-position: relative;
-left: 135px;
-top: 30px;
-`
+  position: relative;
+  left: 135px;
+  top: 95px;
+  display: inline-block;
+`;

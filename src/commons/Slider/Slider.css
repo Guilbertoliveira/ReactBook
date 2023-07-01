@@ -1,0 +1,20 @@
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    cursor: grab;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: orange;
+}
+
+.swiper-pagination {
+    position: relative;
+    top: 10px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    color: white;
+}

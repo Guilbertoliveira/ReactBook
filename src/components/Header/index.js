@@ -1,13 +1,16 @@
-import { HeaderStyled, HeaderLogoStyled } from './styles';
-import logo from './logo.svg';
+import {
+  HeaderStyled,
+  HeaderLogoStyled,
+  ImgStyled,
+  IconeMenuStyled,
+} from './styles';
+import logo from './avatarbook.png';
 import NavOptions from 'components/NavOptions';
-import IconeHeader from 'components/IconeHeader';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 export default function Header() {
-  const [scroll, setScroll] = useState(false)
-
+  const [scroll, setScroll] = useState(false);
 
   function scrollStatus() {
     const scrollTop = window.scrollY;
@@ -31,14 +34,14 @@ export default function Header() {
     <HeaderStyled scroll={scroll}>
       <Link to="/" style={{ textDecoration: 'none' }}>
         <HeaderLogoStyled>
-          <img src={logo} alt="Logo cabeçalho do projeto"></img>
-          <p>
-            <strong>Alura</strong>Books
+          <img src={logo} alt="Logo cabeçalho do projeto" width={50}></img>
+          <p style={{ color: 'black' }}>
+            <strong>Reading</strong>Books
           </p>
         </HeaderLogoStyled>
       </Link>
       <NavOptions />
-      <IconeHeader />
+      <IconeMenuStyled scroll={scroll} style={{ fontSize: 50 }} />
     </HeaderStyled>
   );
 }

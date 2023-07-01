@@ -9,39 +9,31 @@ import { useEffect, useState } from 'react';
 import Card from 'components/Card';
 import { getBooks, patchBooks } from 'services/books';
 import { insertFavorites } from 'services/favorites';
+import { useMemo } from 'react';
 
 export default function Search() {
-  const [book, setBook] = useState([])
-  const [filteredBooks, setFilteredBooks] = useState([]);
+  const [book, setBook] = useState([]);
+  const [searchValue, setSearchValue] = useState('');
 
   useEffect(() => {
-    fetchBooks()
-  }, [])
-
-
+    fetchBooks();
+  }, []);
 
   async function fetchBooks() {
-    const booksAPI = await getBooks()
-    setBook(booksAPI)
-    setFilteredBooks(booksAPI)
+    const booksAPI = await getBooks();
+    setBook(booksAPI);
   }
 
-
-  function filterBook(escrita) {
-    console.log(book.filter((e) => e.name.includes(escrita)));
-    setFilteredBooks(
-      book.filter((e) => e.name.toLowerCase().includes(escrita.toLowerCase()))
-    );
-  }
-
+  const filteredBooks = useMemo(() => {
+    const escrita = new RegExp(searchValue, 'gi');
+    return book.filter((e) => e.name.match(escrita)?.length);
+  }, [book, searchValue]);
 
   async function clickBook(key, favoriteBoolean) {
-    console.log('adicionar')
-    console.log(key)
-    patchBooks(key, !favoriteBoolean)
-    insertFavorites(key)
+    patchBooks(key, !favoriteBoolean);
+    await insertFavorites(key);
+    fetchBooks();
   }
-
 
   return (
     <SearchStyled>
@@ -50,12 +42,21 @@ export default function Search() {
       <Input
         placeholder="Escreva sua próxima leitura"
         onChange={(event) => {
-          filterBook(event.target.value);
+          setSearchValue(event.target.value);
         }}
       />
-      <ShowcaseBookStyled >
+      <ShowcaseBookStyled>
         {filteredBooks.map((item) => {
-          return <Card key={item.id} title={item.name} imageUrl={item.src} clickBook={clickBook} id={item.id} favorite={item.favorite} />;
+          return (
+            <Card
+              key={item.id}
+              title={item.name}
+              imageUrl={item.src}
+              clickBook={clickBook}
+              id={item.id}
+              favorite={item.favorite}
+            />
+          );
         })}
       </ShowcaseBookStyled>
     </SearchStyled>
