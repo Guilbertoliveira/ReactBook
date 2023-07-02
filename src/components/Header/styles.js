@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { CgMenuRightAlt } from 'react-icons/cg';
+import { CgMenuRightAlt, CgMenuRight } from 'react-icons/cg';
 
 export const HeaderStyled = styled.header`
   background: ${(props) => (props.scroll ? 'transparent' : 'white')};
@@ -24,6 +24,12 @@ export const HeaderLogoStyled = styled.div`
 
 `;
 
-export const IconeMenuStyled = styled(CgMenuRightAlt)`
+export const IconeMenuAltStyled = styled(CgMenuRightAlt)`
   color: ${(props) => (props.scroll ? 'white' : 'black')};
 `;
+
+
+
+export const IconeMenuStyled = styled(CgMenuRight)`
+  color: ${(props) => (props.scroll ? 'white' : 'black')};
+`

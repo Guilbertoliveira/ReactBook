@@ -1,8 +1,8 @@
 import {
   HeaderStyled,
   HeaderLogoStyled,
-  ImgStyled,
   IconeMenuStyled,
+  IconeMenuAltStyled
 } from './styles';
 import logo from './avatarbook.png';
 import NavOptions from 'components/NavOptions';
@@ -49,7 +49,11 @@ export default function Header() {
         </HeaderLogoStyled>
       </Link>
       <NavOptions />
-      <IconeMenuStyled scroll={scroll} onClick={() => toggle()} style={{ fontSize: 40 }} />
+      {!isOpen ? (
+        <IconeMenuAltStyled scroll={scroll} onClick={() => toggle()} style={{ fontSize: 40 }} />
+      ) : (
+        <IconeMenuStyled scroll={scroll} onClick={() => toggle()} style={{ fontSize: 40 }} />
+      )}
       {isOpen && <Menu />}
     </HeaderStyled>
   );

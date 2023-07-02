@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+
 export const CardStyled = styled.section`
   transition: transform 0.3s ease;
 
@@ -22,3 +23,4 @@ export const DivFavoriteStyled = styled.div`
   top: 95px;
   display: inline-block;
 `;
+
