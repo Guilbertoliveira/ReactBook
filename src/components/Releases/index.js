@@ -6,11 +6,12 @@ import Slider from 'commons/Slider';
 import { SwiperSlide } from 'swiper/react';
 import { getBooks, patchBooks } from 'services/books';
 import { insertFavorites } from 'services/favorites';
-
+import OpenCard from 'components/OpenCard';
 import { useEffect, useState } from 'react';
 
 export default function Releases() {
   const [book, setBook] = useState([]);
+  const [clickOpen, setClickOpen] = useState(false);
 
   const settings = {
     spaceBetween: 10,
@@ -40,6 +41,10 @@ export default function Releases() {
     fetchBooks();
   }
 
+  function clickBookFavorite() {
+    setClickOpen(!clickOpen);
+  }
+
   return (
     <Section
       title={'Lançamentos'}
@@ -57,6 +62,7 @@ export default function Releases() {
                 favorite={item.favorite}
                 id={item.id}
                 clickBook={clickBook}
+                clickBookFavorite={() => clickBookFavorite()}
               />
             </SwiperSlide>
           );
@@ -69,6 +75,7 @@ export default function Releases() {
         describe="Construindo uma aplicação com a plataforma Google"
         url={recomImage}
       />
+      {clickOpen && <OpenCard />}
     </Section>
   );
 }

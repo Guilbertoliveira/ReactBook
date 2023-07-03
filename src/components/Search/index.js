@@ -10,10 +10,12 @@ import Card from 'components/Card';
 import { getBooks, patchBooks } from 'services/books';
 import { insertFavorites } from 'services/favorites';
 import { useMemo } from 'react';
+import OpenCard from 'components/OpenCard';
 
 export default function Search() {
   const [book, setBook] = useState([]);
   const [searchValue, setSearchValue] = useState('');
+  const [clickOpen, setClickOpen] = useState(false);
 
   useEffect(() => {
     fetchBooks();
@@ -33,6 +35,10 @@ export default function Search() {
     patchBooks(key, true);
     await insertFavorites(key);
     fetchBooks();
+  }
+
+  function clickBookFavorite() {
+    setClickOpen(!clickOpen);
   }
 
   return (
@@ -55,9 +61,11 @@ export default function Search() {
               clickBook={clickBook}
               id={item.id}
               favorite={item.favorite}
+              clickBookFavorite={clickBookFavorite}
             />
           );
         })}
+        {clickOpen && <OpenCard />}
       </ShowcaseBookStyled>
     </SearchStyled>
   );

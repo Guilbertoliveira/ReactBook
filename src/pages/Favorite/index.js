@@ -5,9 +5,11 @@ import { patchBooks } from 'services/books';
 import { FavoritesCardStyled } from './styles';
 import Section from 'components/Section';
 import Releases from 'components/Releases';
+import OpenCard from 'components/OpenCard';
 
 export default function Favorite() {
   const [favorites, setFavorites] = useState([]);
+  const [clickOpen, setClickOpen] = useState(false);
 
   useEffect(() => {
     fetchFavorites();
@@ -24,6 +26,10 @@ export default function Favorite() {
     await patchBooks(key, false);
     await deleteFavorites(key);
     fetchFavorites();
+  }
+
+  function clickBookFavorite() {
+    setClickOpen(!clickOpen);
   }
 
   return (
@@ -48,12 +54,14 @@ export default function Favorite() {
                 clickBook={clickBook}
                 id={favorite.id}
                 favorite={true}
+                clickBookFavorite={() => clickBookFavorite()}
               />
             ))
           )}
         </FavoritesCardStyled>
       </Section>
       <Releases />
+      {clickOpen && <OpenCard />}
     </>
   );
 }
