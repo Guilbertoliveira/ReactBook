@@ -1,10 +1,5 @@
-import { MenuStyled } from "./styles"
+import { MenuStyled } from './styles';
 
 export default function Menu() {
-
-    return (
-        <MenuStyled>
-            Ainda em teste
-        </MenuStyled>
-    )
+  return <MenuStyled>Ainda em teste</MenuStyled>;
 }

@@ -2,14 +2,13 @@ import {
   HeaderStyled,
   HeaderLogoStyled,
   IconeMenuStyled,
-  IconeMenuAltStyled
+  IconeMenuAltStyled,
 } from './styles';
 import logo from './avatarbook.png';
 import NavOptions from 'components/NavOptions';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Menu from 'components/Menu';
-
 
 export default function Header() {
   const [scroll, setScroll] = useState(false);
@@ -33,7 +32,6 @@ export default function Header() {
     };
   }, []);
 
-
   function toggle() {
     setIsOpen(!isOpen);
   }
@@ -50,9 +48,17 @@ export default function Header() {
       </Link>
       <NavOptions />
       {!isOpen ? (
-        <IconeMenuAltStyled scroll={scroll} onClick={() => toggle()} style={{ fontSize: 40 }} />
+        <IconeMenuAltStyled
+          scroll={scroll}
+          onClick={() => toggle()}
+          style={{ fontSize: 40 }}
+        />
       ) : (
-        <IconeMenuStyled scroll={scroll} onClick={() => toggle()} style={{ fontSize: 40 }} />
+        <IconeMenuStyled
+          scroll={scroll}
+          onClick={() => toggle()}
+          style={{ fontSize: 40 }}
+        />
       )}
       {isOpen && <Menu />}
     </HeaderStyled>

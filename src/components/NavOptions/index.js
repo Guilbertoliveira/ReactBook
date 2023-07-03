@@ -28,8 +28,8 @@ export default function NavOptions() {
   return (
     <NavStyled>
       <ListStyled>
-        {textOptions.map((text) => (
-          <LiStyled>
+        {textOptions.map((text, index) => (
+          <LiStyled key={index}>
             <Link
               to={text.url}
               style={{ textDecoration: 'none', color: scrollColor }}

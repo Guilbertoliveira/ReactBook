@@ -1,8 +1,8 @@
 .swiper-slide {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
     cursor: grab;
+    width: 300px;
 }
 
 .swiper-pagination-bullet-active {

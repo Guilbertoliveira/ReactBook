@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-
 export const CardStyled = styled.section`
   transition: transform 0.3s ease;
 
@@ -15,6 +14,7 @@ export const ImgStyled = styled.img`
   box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.03);
   width: 300px;
   height: 420px;
+  z-index: -1;
 `;
 
 export const DivFavoriteStyled = styled.div`
@@ -23,4 +23,3 @@ export const DivFavoriteStyled = styled.div`
   top: 95px;
   display: inline-block;
 `;
-

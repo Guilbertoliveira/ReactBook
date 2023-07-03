@@ -30,7 +30,7 @@ export default function Search() {
   }, [book, searchValue]);
 
   async function clickBook(key, favoriteBoolean) {
-    patchBooks(key, !favoriteBoolean);
+    patchBooks(key, true);
     await insertFavorites(key);
     fetchBooks();
   }

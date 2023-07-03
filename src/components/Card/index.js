@@ -6,9 +6,13 @@ export default function Card({ title, imageUrl, clickBook, id, favorite }) {
     <CardStyled>
       <DivFavoriteStyled>
         {favorite ? (
-          <AiFillStar title="Favoritar" style={{ fontSize: 26, color: 'yellow' }}></AiFillStar>
+          <AiFillStar
+            title="desfavoritar"
+            style={{ fontSize: 26, color: 'yellow' }}
+          ></AiFillStar>
         ) : (
-          <AiOutlineStar title="desfavoritar"
+          <AiOutlineStar
+            title="favoritar"
             style={{ fontSize: 26, color: 'yellow' }}
           ></AiOutlineStar>
         )}
