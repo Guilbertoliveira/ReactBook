@@ -1,10 +1,15 @@
 import styled from 'styled-components';
 
 export const FooterStyled = styled.footer`
+  border: 1px solid white;
+  padding: 5px 0px;
   bottom: 0px;
-  width: 100%;
   text-align: center;
-  box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.9);
-  background-color: white;
+  background-color: transparent;
   backdrop-filter: blur(1px);
+  color: white;
+`;
+
+export const FooterLinkStyled = styled.a`
+  color: white;
 `;

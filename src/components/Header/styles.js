@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { CgMenuRightAlt, CgMenuRight } from 'react-icons/cg';
+import { BiSolidFoodMenu } from 'react-icons/bi';
+import { MdMenuBook } from 'react-icons/md';
 
 export const HeaderStyled = styled.header`
   background: ${(props) => (props.scroll ? 'transparent' : 'white')};
@@ -9,10 +10,10 @@ export const HeaderStyled = styled.header`
   flex-wrap: wrap;
   justify-content: space-between;
   position: fixed;
-  width: 100%;
   z-index: 1;
   align-items: center;
   transition: 1s;
+  width: 100vw;
 `;
 
 export const HeaderLogoStyled = styled.div`
@@ -21,15 +22,14 @@ export const HeaderLogoStyled = styled.div`
   gap: 10px;
   margin-left: 20px;
   align-items: center;
-
 `;
 
-export const IconeMenuAltStyled = styled(CgMenuRightAlt)`
+export const IconeMenuAltStyled = styled(MdMenuBook)`
   color: ${(props) => (props.scroll ? 'white' : 'black')};
+  transition: 1s;
+  margin-right: 10px;
 `;
 
-
-
-export const IconeMenuStyled = styled(CgMenuRight)`
+export const IconeMenuStyled = styled(BiSolidFoodMenu)`
   color: ${(props) => (props.scroll ? 'white' : 'black')};
-`
+`;

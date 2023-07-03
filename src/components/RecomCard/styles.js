@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const CardRecomStyled = styled.section`
   display: flex;
   flex-direction: row;
-  width: 600px;
+  width: 50%;
   color: white;
   justify-content: center;
   align-items: center;

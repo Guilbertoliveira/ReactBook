@@ -4,7 +4,9 @@ import RecomCard from 'components/RecomCard';
 import recomImage from 'img/livro2.png';
 import Slider from 'commons/Slider';
 import { SwiperSlide } from 'swiper/react';
-import { getBooks } from 'services/books';
+import { getBooks, patchBooks } from 'services/books';
+import { insertFavorites } from 'services/favorites';
+
 import { useEffect, useState } from 'react';
 
 export default function Releases() {
@@ -12,7 +14,7 @@ export default function Releases() {
 
   const settings = {
     spaceBetween: 10,
-    slidesPerView: 6,
+    slidesPerView: 'auto',
     navigation: true,
     pagination: {
       clickable: true,
@@ -32,6 +34,12 @@ export default function Releases() {
     setBook(booksAPI);
   }
 
+  async function clickBook(key, favoriteBoolean) {
+    patchBooks(key, true);
+    await insertFavorites(key);
+    fetchBooks();
+  }
+
   return (
     <Section
       title={'Lançamentos'}
@@ -39,15 +47,16 @@ export default function Releases() {
       backgroundColor={'rgb(0, 47, 90)'}
     >
       <Slider settings={settings}>
-        {book.map((item) => {
+        {book.map((item, index) => {
           return (
-            <SwiperSlide>
+            <SwiperSlide key={index}>
               <Card
                 key={item.id}
                 title={item.name}
                 imageUrl={item.src}
                 favorite={item.favorite}
                 id={item.id}
+                clickBook={clickBook}
               />
             </SwiperSlide>
           );
