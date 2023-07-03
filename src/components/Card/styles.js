@@ -14,12 +14,12 @@ export const ImgStyled = styled.img`
   box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.03);
   width: 300px;
   height: 420px;
-  z-index: -1;
 `;
 
 export const DivFavoriteStyled = styled.div`
   position: relative;
-  left: 135px;
-  top: 95px;
+  left: 5px;
+  top: 51px;
   display: inline-block;
+  display: flex;
 `;

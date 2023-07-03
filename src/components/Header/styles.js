@@ -25,11 +25,11 @@ export const HeaderLogoStyled = styled.div`
 `;
 
 export const IconeMenuAltStyled = styled(MdMenuBook)`
-  color: ${(props) => (props.scroll ? 'white' : 'black')};
+  color: ${(props) => (props.scroll ? 'white' : 'orange')};
   transition: 1s;
   margin-right: 10px;
 `;
 
 export const IconeMenuStyled = styled(BiSolidFoodMenu)`
-  color: ${(props) => (props.scroll ? 'white' : 'black')};
+  color: ${(props) => (props.scroll ? 'white' : 'orange')};
 `;
