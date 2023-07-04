@@ -1,4 +1,5 @@
 <div align="center">
+<img src="https://github.com/Guilbertoliveira/ReactBook/blob/main/public/books.png?raw=true" width="50">
 <h1>ReactBook</h1>
 <img alt="GitHub Language Count" src="https://img.shields.io/github/languages/count/Guilbertoliveira/ReactBook" />
 <img alt="GitHub Top Language" src="https://img.shields.io/github/languages/top/Guilbertoliveira/ReactBook" />
