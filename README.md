@@ -31,6 +31,11 @@
 <h2 >Version Mobile</h2>
 
 <h2>Version Desktop</h2>
+<h4>Adding card in favorites with post</h4>
+<img src="https://github.com/Guilbertoliveira/ReactBook/assets/41201436/2df57cc7-097a-43fa-b793-c112852b9b96">
+
+<h4>Removing card with delete method</h4>
+<img src="https://github.com/Guilbertoliveira/ReactBook/assets/41201436/da535712-b3ac-4214-a566-45d422ab03fe">
 
 <h2>Technologies used</h2>
 <div>
