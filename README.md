@@ -30,6 +30,10 @@
 </ol>
 
 <h2 >Version Mobile</h2>
+<img src="https://github.com/Guilbertoliveira/ReactBook/assets/41201436/17112db7-d245-48ba-820d-96c1538f6ad2">
+
+<h2 >Tablet Mobile</h2>
+<img src="https://github.com/Guilbertoliveira/ReactBook/assets/41201436/30c6c4f1-1e3a-4357-9962-81ffbe1352e8">
 
 <h2>Version Desktop</h2>
 <h4>Adding card in favorites with post</h4>
@@ -54,11 +58,34 @@
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firefox/firefox-original-wordmark.svg" width="50" title="Firefox" />
 </div> 
 
-
-
-  
 <h2> Project link </h2>
 <a href="https://react-book-orpin.vercel.app/">Vercel Link</a>
+
+
+<h2>To use the project:</h2>
+<ol>
+
+<li>Clone repository with gitbash</li>
+
+```
+git clone https://github.com/Guilbertoliveira/ReactBook.git
+```
+
+<li>To install project dependencies (you need to have node.js installed)</li>
+
+```
+npm install
+```
+
+<li>To run the project locally</li>
+
+```
+npm start
+```
+
+<li>Remembering that you need the backend that will be available <a href="https://github.com/Guilbertoliveira/BookServerAPI">at the link</a></li>
+
+</ol>
 
 <h2>Contributing</h2>
 <ol>
@@ -68,4 +95,15 @@
 <li>Commit your Changes (git commit -m 'Add some AmazingFeature')</li>
 <li>Push to the Branch (git push origin feature/AmazingFeature)</li>
 <li>Open a Pull Request</li>
-<ol>
+</ol>
+
+<h2>Conventional commits:</h2>
+<ul>
+    <li>feat: (new feature for the user, not a new feature for build script)</li>
+    <li>fix: (bug fix for the user, not a fix to a build script)</li>
+    <li>docs: (changes to the documentation)</li>
+    <li>style: (formatting, missing semi colons, etc; no production code change)</li>
+    <li>refactor: (refactoring production code, eg. renaming a variable)</li>
+    <li>test: (adding missing tests, refactoring tests; no production code change)</li>
+    <li>chore: (updating grunt tasks etc; no production code change)</li>
+</ul>
