@@ -9,8 +9,24 @@
 </div>
 
 <h2>:hammer:Project Status:hammer:</h2>
+<p>Basic project completed, but improvements will be made.</p>
 
 <h2>Project description</h2>
+<p>Project made from scratch using react for the front end of the final project, the project has an <a href="https://github.com/Guilbertoliveira/BookServerAPI">integrated backend.</a></p>
+
+<h2>Improvements made by me</h2>
+<ol>
+    <li>Dynamic input when the letters are typed, the result does not appear</li>
+    <li>Recognizes both uppercase and lowercase in the search field</li>
+    <li>Insertion of the prettier in the project along with the dependencies</li>
+    <li>New book filter and return of favorites if there are no books</li>
+    <li>New menu added for mobile version (not finalized)</li>
+    <li>Project designer improvement</li>
+    <li>Separation of styled component files</li>
+    <li>New inserted carousel (SwiperJs)</li>
+    <li>Favorite feature insertion</li>
+    <li>Modal insertion when click on card</li>
+</ol>
 
 <h2 >Version Mobile</h2>
 
