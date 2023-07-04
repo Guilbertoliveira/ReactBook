@@ -38,6 +38,9 @@
 <h4>Removing card with delete method</h4>
 <img src="https://github.com/Guilbertoliveira/ReactBook/assets/41201436/da535712-b3ac-4214-a566-45d422ab03fe">
 
+<h4>Book fetch get method</h4>
+<img src="https://github.com/Guilbertoliveira/ReactBook/assets/41201436/f0550e38-1200-46f5-8d31-cb9fe5a3ea2e">
+
 <h2>Technologies used</h2>
 <div>
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain-wordmark.svg" width="50" title="CSS"  />
