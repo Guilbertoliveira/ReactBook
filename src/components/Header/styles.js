@@ -5,15 +5,19 @@ import { MdMenuBook } from 'react-icons/md';
 export const HeaderStyled = styled.header`
   background: ${(props) => (props.scroll ? 'transparent' : 'white')};
   backdrop-filter: blur(5px);
-  box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.54);
+  box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.84);
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   position: fixed;
   z-index: 1;
   align-items: center;
   transition: 1s;
   width: 100vw;
+
+  @media screen and (max-width: 610px) {
+    justify-content: space-between;
+}
 `;
 
 export const HeaderLogoStyled = styled.div`
@@ -27,9 +31,19 @@ export const HeaderLogoStyled = styled.div`
 export const IconeMenuAltStyled = styled(MdMenuBook)`
   color: ${(props) => (props.scroll ? 'white' : 'orange')};
   transition: 1s;
-  margin-right: 10px;
+  margin-right: 20px;
+  display: none;
+
+  @media screen and (max-width: 610px) {
+    display: block;
+}
 `;
 
 export const IconeMenuStyled = styled(BiSolidFoodMenu)`
   color: ${(props) => (props.scroll ? 'white' : 'orange')};
+  margin-right: 20px;
+  display: none;
+  @media screen and (max-width: 610px) {
+    display: block;
+}
 `;

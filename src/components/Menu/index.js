@@ -1,5 +1,27 @@
-import { MenuStyled } from './styles';
+import { Link } from 'react-router-dom';
+import { MenuStyled, NavStyled, LiStyled } from './styles';
 
 export default function Menu() {
-  return <MenuStyled>Ainda em teste</MenuStyled>;
+  const textOptions = [
+    { titleNav: 'Categorias', url: 'categoria' },
+    { titleNav: 'Favoritos', url: 'favoritos' },
+    { titleNav: 'Minha estante', url: 'estante' },
+  ];
+
+  return (
+    <MenuStyled>
+      <NavStyled>
+        {textOptions.map((text, index) => (
+          <LiStyled key={index}>
+            <Link
+              to={text.url}
+              style={{ textDecoration: 'none', color: 'white' }}
+            >
+              {text.titleNav}
+            </Link>
+          </LiStyled>
+        ))}
+      </NavStyled>
+    </MenuStyled>
+  );
 }

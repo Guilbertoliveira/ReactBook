@@ -20,4 +20,8 @@ export const Input = styled.input`
     outline: none;
     border: 1px solid #fc7423;
   }
+
+  @media screen and (max-width: 480px) {
+    padding: 20px 10px;
+  }
 `;
