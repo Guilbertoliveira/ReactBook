@@ -48,13 +48,13 @@ export default function Header() {
       </Link>
       <NavOptions />
       {!isOpen ? (
-        <IconeMenuAltStyled
+        <IconeMenuStyled
           scroll={scroll}
           onClick={() => toggle()}
           style={{ fontSize: 40 }}
         />
       ) : (
-        <IconeMenuStyled
+        <IconeMenuAltStyled
           scroll={scroll}
           onClick={() => toggle()}
           style={{ fontSize: 40 }}

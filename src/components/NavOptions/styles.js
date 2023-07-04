@@ -2,6 +2,10 @@ import styled from 'styled-components';
 
 export const NavStyled = styled.nav`
   margin-left: 10px;
+
+  @media screen and (max-width: 610px) {
+    display: none;
+  }
 `;
 
 export const ListStyled = styled.ul`
