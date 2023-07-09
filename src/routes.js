@@ -1,4 +1,5 @@
 import Categories from 'pages/Categories';
+import PageError from 'pages/Error';
 import Favorite from 'pages/Favorite';
 import Home from 'pages/Home';
 import MyShelf from 'pages/MyShelf';
@@ -14,7 +15,7 @@ export default function RoutesPage() {
           <Route path="/favoritos" element={<Favorite />} />
           <Route path="/categoria" element={<Categories />} />
           <Route path="/estante" element={<MyShelf />} />
-          <Route path="*" />
+          <Route path="*" element={<PageError />} />
         </Route>
       </Routes>
     </BrowserRouter>
