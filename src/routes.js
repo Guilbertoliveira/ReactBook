@@ -7,19 +7,27 @@ import Theme from 'pages/Theme';
 import Login from 'pages/Login';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+import { AuthProvider } from 'context/auth';
+
+
 export default function RoutesPage() {
+
+
+
   return (
     <BrowserRouter>
-      <Routes>
-        <Route element={<Theme></Theme>}>
-          <Route index element={<Home></Home>} />
-          <Route path="/favoritos" element={<Favorite />} />
-          <Route path="/categoria" element={<Categories />} />
-          <Route path="/estante" element={<MyShelf />} />
-          <Route path="*" element={<PageError />} />
-        </Route>
-        <Route path="/login" element={<Login></Login>}></Route>
-      </Routes>
+      <AuthProvider>
+        <Routes>
+          <Route element={<Theme></Theme>}>
+            <Route index element={<Home></Home>} />
+            <Route path="/favoritos" element={<Favorite />} />
+            <Route path="/categoria" element={<Categories />} />
+            <Route path="/estante" element={<MyShelf />} />
+            <Route path="*" element={<PageError />} />
+          </Route>
+          <Route path="/login" element={<Login></Login>}></Route>
+        </Routes>
+      </AuthProvider>
     </BrowserRouter>
   );
 }
