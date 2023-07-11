@@ -17,7 +17,7 @@ export const HeaderStyled = styled.header`
 
   @media screen and (max-width: 610px) {
     justify-content: space-between;
-}
+  }
 `;
 
 export const HeaderLogoStyled = styled.div`
@@ -36,7 +36,7 @@ export const IconeMenuAltStyled = styled(MdMenuBook)`
 
   @media screen and (max-width: 610px) {
     display: block;
-}
+  }
 `;
 
 export const IconeMenuStyled = styled(BiSolidFoodMenu)`
@@ -45,5 +45,5 @@ export const IconeMenuStyled = styled(BiSolidFoodMenu)`
   display: none;
   @media screen and (max-width: 610px) {
     display: block;
-}
+  }
 `;
