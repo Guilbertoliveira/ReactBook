@@ -10,20 +10,18 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthContext, AuthProvider } from 'context/auth';
 import { useContext } from 'react';
 
-
 export default function RoutesPage() {
-
   function Private({ children }) {
-    const { authenticated, loading } = useContext(AuthContext)
+    const { authenticated, loading } = useContext(AuthContext);
 
     if (loading) {
-      return <div>Carregando...</div>
+      return <div>Carregando...</div>;
     }
     if (!authenticated) {
-      return <Navigate to="/login" />
+      return <Navigate to="/login" />;
     }
 
-    return children
+    return children;
   }
 
   return (
@@ -31,11 +29,46 @@ export default function RoutesPage() {
       <AuthProvider>
         <Routes>
           <Route element={<Theme></Theme>}>
-            <Route index element={<Private><Home></Home></Private>} />
-            <Route path="/favoritos" element={<Private><Favorite /></Private>} />
-            <Route path="/categoria" element={<Private><Categories /></Private>}></Route>
-            <Route path="/estante" element={<Private><MyShelf /></Private>} />
-            <Route path="*" element={<Private><PageError /></Private>} />
+            <Route
+              index
+              element={
+                <Private>
+                  <Home></Home>
+                </Private>
+              }
+            />
+            <Route
+              path="/favoritos"
+              element={
+                <Private>
+                  <Favorite />
+                </Private>
+              }
+            />
+            <Route
+              path="/categoria"
+              element={
+                <Private>
+                  <Categories />
+                </Private>
+              }
+            ></Route>
+            <Route
+              path="/estante"
+              element={
+                <Private>
+                  <MyShelf />
+                </Private>
+              }
+            />
+            <Route
+              path="*"
+              element={
+                <Private>
+                  <PageError />
+                </Private>
+              }
+            />
           </Route>
           <Route path="/login" element={<Login></Login>}></Route>
         </Routes>

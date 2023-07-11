@@ -9,10 +9,17 @@ import NavOptions from 'components/NavOptions';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Menu from 'components/Menu';
+import { useContext } from 'react';
+import { AuthContext } from 'context/auth';
 
 export default function Header() {
   const [scroll, setScroll] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const { logout } = useContext(AuthContext);
+
+  function handleLogout() {
+    logout();
+  }
 
   function scrollStatus() {
     const scrollTop = window.scrollY;
@@ -61,6 +68,7 @@ export default function Header() {
         />
       )}
       {isOpen && <Menu />}
+      <button onClick={handleLogout}>Logout</button>
     </HeaderStyled>
   );
 }
