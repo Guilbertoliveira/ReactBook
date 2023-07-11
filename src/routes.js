@@ -14,8 +14,11 @@ import { useContext } from 'react';
 export default function RoutesPage() {
 
   function Private({ children }) {
-    const { authenticated } = useContext(AuthContext)
+    const { authenticated, loading } = useContext(AuthContext)
 
+    if (loading) {
+      return <div>Carregando...</div>
+    }
     if (!authenticated) {
       return <Navigate to="/login" />
     }
