@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import { MenuStyled, NavStyled, LiStyled } from './styles';
+import { useContext } from 'react';
+import { AuthContext } from 'context/auth';
 
 export default function Menu() {
   const textOptions = [
@@ -7,6 +9,12 @@ export default function Menu() {
     { titleNav: 'Favoritos', url: 'favoritos' },
     { titleNav: 'Minha estante', url: 'estante' },
   ];
+
+  const { logout } = useContext(AuthContext);
+
+  function handleLogout() {
+    logout();
+  }
 
   return (
     <MenuStyled>
@@ -22,6 +30,7 @@ export default function Menu() {
           </LiStyled>
         ))}
       </NavStyled>
+      <button onClick={handleLogout}>Logout</button>
     </MenuStyled>
   );
 }
