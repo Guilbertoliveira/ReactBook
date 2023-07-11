@@ -1,6 +1,5 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const ImgStyled = styled.img`
-max-width: 300px;
-
-`
+  max-width: 300px;
+`;
