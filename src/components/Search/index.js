@@ -64,6 +64,7 @@ export default function Search() {
               id={item.id}
               favorite={item.favorite}
               clickBookFavorite={clickBookFavorite}
+              desc={item.describe}
             />
           );
         })}

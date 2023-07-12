@@ -18,6 +18,7 @@ export default function OpenCard(props) {
       name: props.bookOpen[0].textContent,
       url: props.bookOpen[1].src,
       alt: props.bookOpen[1].alt,
+      desc: props.bookOpen[2].textContent,
     });
   }, []);
 
@@ -29,8 +30,7 @@ export default function OpenCard(props) {
         <DivDescribeStyled>
           <TitleStyled>{bookOpen.name}</TitleStyled>
           <PStyled>
-            descrição aleatoria inserida blablablabla
-            eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee33333333333333333333333333333333333333333333
+            {bookOpen.desc}
           </PStyled>
         </DivDescribeStyled>
       </CardStyled>

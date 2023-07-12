@@ -49,7 +49,7 @@ export default function Header() {
       <Link to="/" style={{ textDecoration: 'none' }}>
         <HeaderLogoStyled>
           <img src={logo} alt="Logo cabeçalho do projeto" width={50}></img>
-          <p style={{ color: 'black' }}>
+          <p style={{ color: 'orange' }}>
             <strong>Reading</strong>Books
           </p>
         </HeaderLogoStyled>
