@@ -3,6 +3,7 @@ import {
   HeaderLogoStyled,
   IconeMenuStyled,
   IconeMenuAltStyled,
+  ButtonStyled,
 } from './styles';
 import logo from './avatarbook.png';
 import NavOptions from 'components/NavOptions';
@@ -68,7 +69,9 @@ export default function Header() {
         />
       )}
       {isOpen && <Menu />}
-      <button onClick={handleLogout}>Logout</button>
+      <ButtonStyled scroll={scroll} onClick={handleLogout}>
+        Logout
+      </ButtonStyled>
     </HeaderStyled>
   );
 }

@@ -16,6 +16,7 @@ export default function Search() {
   const [book, setBook] = useState([]);
   const [searchValue, setSearchValue] = useState('');
   const [clickOpen, setClickOpen] = useState(false);
+  const [dataBookOpen, setDataBookOpen] = useState([]);
 
   useEffect(() => {
     fetchBooks();
@@ -37,8 +38,9 @@ export default function Search() {
     fetchBooks();
   }
 
-  function clickBookFavorite() {
+  function clickBookFavorite(e) {
     setClickOpen(!clickOpen);
+    setDataBookOpen(e.children);
   }
 
   return (
@@ -65,7 +67,7 @@ export default function Search() {
             />
           );
         })}
-        {clickOpen && <OpenCard />}
+        {clickOpen && <OpenCard bookOpen={dataBookOpen} />}
       </ShowcaseBookStyled>
     </SearchStyled>
   );

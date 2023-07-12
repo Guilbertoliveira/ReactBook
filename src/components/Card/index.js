@@ -9,6 +9,14 @@ export default function Card({
   favorite,
   clickBookFavorite,
 }) {
+  function teste(e) {
+    if (clickBookFavorite) {
+      return clickBookFavorite(e);
+    }
+
+    console.log('nao disponivel');
+  }
+
   return (
     <>
       <CardStyled>
@@ -28,12 +36,14 @@ export default function Card({
           )}
         </DivFavoriteStyled>
 
-        <div onClick={() => clickBookFavorite()}>
-          <h1>{title}</h1>
-          <ImgStyled
-            src={imageUrl}
-            alt={`imagem do livro ${imageUrl}`}
-          ></ImgStyled>
+        <div onClick={(event) => teste(event.target.parentNode)}>
+          <div>
+            <h1>{title}</h1>
+            <ImgStyled
+              src={imageUrl}
+              alt={`imagem do livro ${imageUrl}`}
+            ></ImgStyled>
+          </div>
         </div>
       </CardStyled>
     </>

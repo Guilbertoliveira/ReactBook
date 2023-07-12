@@ -24,24 +24,21 @@ export function AuthProvider({ children }) {
 
     try {
       const response = await insertLogin(email, password);
-      console.log("login", response.data)
+      console.log('login', response.data);
 
-      const loggedUser = response.data.email
-      const token = response.data.token
+      const loggedUser = response.data.email;
+      const token = response.data.token;
 
       localStorage.setItem('user', JSON.stringify(loggedUser));
       localStorage.setItem('token', JSON.stringify(token));
 
-      clientAPI.defaults.headers.Authorization = `Bearer ${token}`
+      clientAPI.defaults.headers.Authorization = `Bearer ${token}`;
 
       setUser(loggedUser);
       navigate('/');
-
+    } catch (error) {
+      alert('moio');
     }
-    catch (error) {
-      alert('moio')
-    }
-
   }
 
   function logout() {
@@ -49,7 +46,7 @@ export function AuthProvider({ children }) {
     setUser(null);
     localStorage.removeItem('user');
     localStorage.removeItem('token');
-    clientAPI.defaults.headers.Authorization = null
+    clientAPI.defaults.headers.Authorization = null;
     navigate('/login');
   }
 
