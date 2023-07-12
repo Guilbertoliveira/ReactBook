@@ -11,3 +11,29 @@ export const OpenCardStyled = styled.section`
   flex-direction: column;
   justify-content: center;
 `;
+
+export const CardStyled = styled.aside`
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+`;
+
+export const ImgCardStyled = styled.img`
+  height: 90%;
+  margin-top: 10px;
+`;
+
+export const DivDescribeStyled = styled.div`
+  margin: 40px;
+  width: 20vw;
+  word-wrap: break-word;
+`;
+
+export const TitleStyled = styled.h2`
+  font-size: 40px;
+`;
+
+export const PStyled = styled.p`
+  font-size: 18px;
+`;

@@ -23,3 +23,7 @@ export const DivFavoriteStyled = styled.div`
   display: inline-block;
   display: flex;
 `;
+
+export const PStyled = styled.p`
+display: none;
+`

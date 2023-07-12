@@ -2,6 +2,7 @@ import { createContext } from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { insertLogin, clientAPI } from 'services/client';
 
 export const AuthContext = createContext({});
 
@@ -18,19 +19,25 @@ export function AuthProvider({ children }) {
     setLoading(false);
   }, []);
 
-  function login(email, password) {
+  async function login(email, password) {
     console.log('login auth', { email, password });
 
-    const loggedUser = {
-      id: '123',
-      email,
-    };
+    try {
+      const response = await insertLogin(email, password);
+      console.log('login', response.data);
 
-    localStorage.setItem('user', JSON.stringify(loggedUser));
+      const loggedUser = response.data.email;
+      const token = response.data.token;
 
-    if (password === 'secret') {
+      localStorage.setItem('user', JSON.stringify(loggedUser));
+      localStorage.setItem('token', JSON.stringify(token));
+
+      clientAPI.defaults.headers.Authorization = `Bearer ${token}`;
+
       setUser(loggedUser);
       navigate('/');
+    } catch (error) {
+      alert('moio');
     }
   }
 
@@ -38,6 +45,8 @@ export function AuthProvider({ children }) {
     console.log('logout');
     setUser(null);
     localStorage.removeItem('user');
+    localStorage.removeItem('token');
+    clientAPI.defaults.headers.Authorization = null;
     navigate('/login');
   }
 

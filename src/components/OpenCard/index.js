@@ -1,17 +1,39 @@
-import Card from 'components/Card';
-import { OpenCardStyled } from './styles';
+import { useEffect } from 'react';
+import {
+  OpenCardStyled,
+  CardStyled,
+  ImgCardStyled,
+  DivDescribeStyled,
+  TitleStyled,
+  PStyled,
+} from './styles';
+import { useState } from 'react';
 
-export default function OpenCard() {
+export default function OpenCard(props) {
+  let [bookOpen, setBookOpen] = useState('');
+  let [openModel, setOpenModel] = useState(true);
+
+  useEffect(() => {
+    setBookOpen({
+      name: props.bookOpen[0].textContent,
+      url: props.bookOpen[1].src,
+      alt: props.bookOpen[1].alt,
+      desc: props.bookOpen[2].textContent,
+    });
+  }, []);
+
   return (
     <OpenCardStyled>
-      <Card
-        id={'1'}
-        imageUrl={
-          'https://edit.org/photos/img/blog/zz7-flyer-personalizavel-para-capas-de-livros.jpg-840.jpg'
-        }
-        title={'teste'}
-      ></Card>
-      <p>descrição aleatoria inserida blablablabla</p>
+      <CardStyled>
+        <ImgCardStyled src={bookOpen.url} alt={bookOpen.alt}></ImgCardStyled>
+
+        <DivDescribeStyled>
+          <TitleStyled>{bookOpen.name}</TitleStyled>
+          <PStyled>
+            {bookOpen.desc}
+          </PStyled>
+        </DivDescribeStyled>
+      </CardStyled>
     </OpenCardStyled>
   );
 }

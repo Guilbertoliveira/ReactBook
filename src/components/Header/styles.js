@@ -47,3 +47,17 @@ export const IconeMenuStyled = styled(BiSolidFoodMenu)`
     display: block;
   }
 `;
+
+export const ButtonStyled = styled.button`
+  border: none;
+  padding: 5px 20px;
+  border-radius: 2px;
+  color: ${(props) => (props.scroll ? 'white' : 'black')};
+  background-color: ${(props) => (props.scroll ? 'transparent' : 'white')};
+  box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.24);
+  text-transform: uppercase;
+
+  @media screen and (max-width: 610px) {
+    display: none;
+  }
+`;

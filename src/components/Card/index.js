@@ -1,4 +1,4 @@
-import { CardStyled, ImgStyled, DivFavoriteStyled } from './styles';
+import { CardStyled, ImgStyled, DivFavoriteStyled, PStyled } from './styles';
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 
 export default function Card({
@@ -8,7 +8,17 @@ export default function Card({
   id,
   favorite,
   clickBookFavorite,
+  desc
+
 }) {
+  function teste(e) {
+    if (clickBookFavorite) {
+      return clickBookFavorite(e);
+    }
+
+    console.log('nao disponivel');
+  }
+
   return (
     <>
       <CardStyled>
@@ -28,12 +38,15 @@ export default function Card({
           )}
         </DivFavoriteStyled>
 
-        <div onClick={() => clickBookFavorite()}>
-          <h1>{title}</h1>
-          <ImgStyled
-            src={imageUrl}
-            alt={`imagem do livro ${imageUrl}`}
-          ></ImgStyled>
+        <div onClick={(event) => teste(event.target.parentNode)}>
+          <div>
+            <h1>{title}</h1>
+            <ImgStyled
+              src={imageUrl}
+              alt={`imagem do livro ${imageUrl}`}
+            ></ImgStyled>
+            <PStyled>{desc}</PStyled>
+          </div>
         </div>
       </CardStyled>
     </>
