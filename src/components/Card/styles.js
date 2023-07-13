@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const CardStyled = styled.section`
   transition: transform 0.3s ease;
-
+  cursor: pointer;
 
   &:hover {
     background-color: rgba(0, 0, 0, 0.05);

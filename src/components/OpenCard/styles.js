@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const OpenCardStyled = styled.section`
-  background-color: rgba(0, 47, 81, 0.97);
+  background-color: rgba(0, 47, 81, 0.99);
   width: 100%;
   position: fixed;
   top: 20%;
@@ -17,6 +17,7 @@ export const CardStyled = styled.aside`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  color: white;
 `;
 
 export const ImgCardStyled = styled.img`

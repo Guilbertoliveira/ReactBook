@@ -7,6 +7,9 @@ export const SearchStyled = styled.section`
   padding: 85px 0;
   width: 100%;
   font-family: 'Acme', sans-serif;
+  filter: ${(props) => (props.clicktrue ? 'brightness(0.1)' : 'brightness(1)')};
+  transition: 1s;
+
 `;
 
 export const TitleStyled = styled.h2`
@@ -36,4 +39,6 @@ justify-content: center;
 gap: 10px;
 align-items: flex-start;
 transition: 1s;
+
 `
+
