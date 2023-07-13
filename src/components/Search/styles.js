@@ -28,3 +28,10 @@ export const ShowcaseBookStyled = styled.section`
   flex-wrap: wrap;
   gap: 20px;
 `;
+
+export const InputSpanStyled = styled.span`
+display: flex;
+justify-content: center;
+gap: 10px;
+align-items: flex-start
+`

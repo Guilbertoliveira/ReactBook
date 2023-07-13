@@ -4,6 +4,7 @@ import {
   SubTitleStyled,
   TitleStyled,
   ShowcaseBookStyled,
+  InputSpanStyled
 } from './styles';
 import { useEffect, useState } from 'react';
 import Card from 'components/Card';
@@ -11,6 +12,7 @@ import { getBooks, patchBooks } from 'services/books';
 import { insertFavorites } from 'services/favorites';
 import { useMemo } from 'react';
 import OpenCard from 'components/OpenCard';
+import ButtonVoice from 'components/ButtonVoice';
 
 export default function Search() {
   const [book, setBook] = useState([]);
@@ -47,12 +49,15 @@ export default function Search() {
     <SearchStyled>
       <TitleStyled>Ja sabe por onde começar?</TitleStyled>
       <SubTitleStyled>Encontre seu livro em nossa estante</SubTitleStyled>
-      <Input
-        placeholder="Escreva sua próxima leitura"
-        onChange={(event) => {
-          setSearchValue(event.target.value);
-        }}
-      />
+      <InputSpanStyled>
+        <Input
+          placeholder="Escreva sua próxima leitura"
+          onChange={(event) => {
+            setSearchValue(event.target.value);
+          }}
+        />
+        <ButtonVoice></ButtonVoice>
+      </InputSpanStyled>
       <ShowcaseBookStyled>
         {filteredBooks.map((item) => {
           return (
