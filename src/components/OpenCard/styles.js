@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const OpenCardStyled = styled.section`
-  background-color: rgba(0, 47, 81, 0.9);
+  background-color: rgba(0, 47, 81, 0.97);
   width: 100%;
   position: fixed;
   top: 20%;
@@ -26,7 +26,7 @@ export const ImgCardStyled = styled.img`
 
 export const DivDescribeStyled = styled.div`
   margin: 40px;
-  width: 20vw;
+  width: 30vw;
   word-wrap: break-word;
 `;
 

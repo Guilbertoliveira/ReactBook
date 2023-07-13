@@ -4,6 +4,7 @@ import {
   SubTitleStyled,
   TitleStyled,
   ShowcaseBookStyled,
+  InputSpanStyled
 } from './styles';
 import { useEffect, useState } from 'react';
 import Card from 'components/Card';
@@ -11,6 +12,7 @@ import { getBooks, patchBooks } from 'services/books';
 import { insertFavorites } from 'services/favorites';
 import { useMemo } from 'react';
 import OpenCard from 'components/OpenCard';
+import ButtonVoice from 'components/ButtonVoice';
 
 export default function Search() {
   const [book, setBook] = useState([]);
@@ -20,6 +22,7 @@ export default function Search() {
 
   useEffect(() => {
     fetchBooks();
+
   }, []);
 
   async function fetchBooks() {
@@ -43,16 +46,24 @@ export default function Search() {
     setDataBookOpen(e.children);
   }
 
+  function returnVoice(text) {
+    setSearchValue(text)
+  }
+
   return (
-    <SearchStyled>
+
+    < SearchStyled >
       <TitleStyled>Ja sabe por onde começar?</TitleStyled>
       <SubTitleStyled>Encontre seu livro em nossa estante</SubTitleStyled>
-      <Input
-        placeholder="Escreva sua próxima leitura"
-        onChange={(event) => {
-          setSearchValue(event.target.value);
-        }}
-      />
+      <InputSpanStyled>
+        <Input
+          placeholder="Escreva sua próxima leitura"
+          onChange={(event) => {
+            setSearchValue(event.target.value);
+          }}
+        />
+        <ButtonVoice returnVoice={returnVoice}></ButtonVoice>
+      </InputSpanStyled>
       <ShowcaseBookStyled>
         {filteredBooks.map((item) => {
           return (
@@ -68,8 +79,9 @@ export default function Search() {
             />
           );
         })}
+
         {clickOpen && <OpenCard bookOpen={dataBookOpen} />}
       </ShowcaseBookStyled>
-    </SearchStyled>
+    </SearchStyled >
   );
 }

@@ -6,12 +6,14 @@ export const FormStyled = styled.form`
   flex-direction: column;
   justify-content: center;
   color: white;
-  box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.54);
+  box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.99);
   width: 300px;
   height: 300px;
   padding: 50px;
   border-radius: 40px;
   font-family: 'Acme', sans-serif;
+  background-color: rgba(0, 47, 82, 0.89);
+;
 `;
 
 export const SectionStyled = styled.section`
@@ -20,17 +22,7 @@ export const SectionStyled = styled.section`
   align-items: center;
   height: 100vh;
   background-color: hsla(0, 100%, 50%, 1);
-  background-image: radial-gradient(
-      at 50% 100%,
-      hsla(200, 100%, 24%, 1) 0px,
-      transparent 50%
-    ),
-    radial-gradient(at 80% 0%, hsla(220, 100%, 26%, 1) 0px, transparent 50%),
-    radial-gradient(at 0% 30%, hsla(200, 100%, 23%, 1) 0px, transparent 50%),
-    radial-gradient(at 80% 50%, hsla(200, 100%, 26%, 1) 0px, transparent 50%),
-    radial-gradient(at 0% 100%, hsla(222, 100%, 27%, 1) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, hsla(220, 100%, 20%, 1) 0px, transparent 50%),
-    radial-gradient(at 0% 0%, hsla(222, 100%, 26%, 1) 0px, transparent 50%);
+  background-image: url('https://guiadoestudante.abril.com.br/wp-content/uploads/sites/4/2020/05/nota-livros-jornalismo.jpg?quality=100&strip=info&w=1280&h=720&crop=1')
 `;
 
 export const EmailStyled = styled.div`
