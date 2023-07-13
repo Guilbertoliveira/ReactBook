@@ -22,6 +22,7 @@ export default function Search() {
 
   useEffect(() => {
     fetchBooks();
+
   }, []);
 
   async function fetchBooks() {
@@ -45,8 +46,13 @@ export default function Search() {
     setDataBookOpen(e.children);
   }
 
+  function returnVoice(text) {
+    setSearchValue(text)
+  }
+
   return (
-    <SearchStyled>
+
+    < SearchStyled >
       <TitleStyled>Ja sabe por onde começar?</TitleStyled>
       <SubTitleStyled>Encontre seu livro em nossa estante</SubTitleStyled>
       <InputSpanStyled>
@@ -56,7 +62,7 @@ export default function Search() {
             setSearchValue(event.target.value);
           }}
         />
-        <ButtonVoice></ButtonVoice>
+        <ButtonVoice returnVoice={returnVoice}></ButtonVoice>
       </InputSpanStyled>
       <ShowcaseBookStyled>
         {filteredBooks.map((item) => {
@@ -73,8 +79,9 @@ export default function Search() {
             />
           );
         })}
+
         {clickOpen && <OpenCard bookOpen={dataBookOpen} />}
       </ShowcaseBookStyled>
-    </SearchStyled>
+    </SearchStyled >
   );
 }

@@ -38,16 +38,17 @@ export default function Card({
           )}
         </DivFavoriteStyled>
 
-        <div onClick={(event) => teste(event.target.parentNode)}>
-          <div>
-            <h1>{title}</h1>
-            <ImgStyled
-              src={imageUrl}
-              alt={`imagem do livro ${imageUrl}`}
-            ></ImgStyled>
-            <PStyled>{desc}</PStyled>
-          </div>
+
+        <div>
+          <h1>{title}</h1>
+          <ImgStyled
+            onClick={(event) => teste(event.target.parentNode)}
+            src={imageUrl}
+            alt={`imagem do livro ${imageUrl}`}
+          ></ImgStyled>
+          <PStyled>{desc}</PStyled>
         </div>
+
       </CardStyled>
     </>
   );

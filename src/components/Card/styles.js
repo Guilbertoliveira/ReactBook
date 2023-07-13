@@ -3,11 +3,13 @@ import styled from 'styled-components';
 export const CardStyled = styled.section`
   transition: transform 0.3s ease;
 
-  :hover {
+
+  &:hover {
     background-color: rgba(0, 0, 0, 0.05);
-    transform: scale(1.1);
+    transform: scale(1.05);
     border-radius: 3px;
   }
+ 
 `;
 
 export const ImgStyled = styled.img`
@@ -17,13 +19,14 @@ export const ImgStyled = styled.img`
 `;
 
 export const DivFavoriteStyled = styled.div`
-  position: relative;
   left: 5px;
-  top: 51px;
-  display: inline-block;
+  top: 45px;
   display: flex;
+  position: relative;
 `;
 
 export const PStyled = styled.p`
 display: none;
 `
+
+

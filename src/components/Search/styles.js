@@ -27,11 +27,13 @@ export const ShowcaseBookStyled = styled.section`
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
+  transition: 1s;
 `;
 
 export const InputSpanStyled = styled.span`
 display: flex;
 justify-content: center;
 gap: 10px;
-align-items: flex-start
+align-items: flex-start;
+transition: 1s;
 `
