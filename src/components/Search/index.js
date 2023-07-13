@@ -52,36 +52,38 @@ export default function Search() {
 
   return (
 
-    < SearchStyled >
-      <TitleStyled>Ja sabe por onde começar?</TitleStyled>
-      <SubTitleStyled>Encontre seu livro em nossa estante</SubTitleStyled>
-      <InputSpanStyled>
-        <Input
-          placeholder="Escreva sua próxima leitura"
-          onChange={(event) => {
-            setSearchValue(event.target.value);
-          }}
-        />
-        <ButtonVoice returnVoice={returnVoice}></ButtonVoice>
-      </InputSpanStyled>
-      <ShowcaseBookStyled>
-        {filteredBooks.map((item) => {
-          return (
-            <Card
-              key={item.id}
-              title={item.name}
-              imageUrl={item.src}
-              clickBook={clickBook}
-              id={item.id}
-              favorite={item.favorite}
-              clickBookFavorite={clickBookFavorite}
-              desc={item.describe}
-            />
-          );
-        })}
+    <>
+      < SearchStyled clicktrue={clickOpen} >
+        <TitleStyled>Ja sabe por onde começar?</TitleStyled>
+        <SubTitleStyled>Encontre seu livro em nossa estante</SubTitleStyled>
+        <InputSpanStyled>
+          <Input
+            placeholder="Escreva sua próxima leitura"
+            onChange={(event) => {
+              setSearchValue(event.target.value);
+            }}
+          />
+          <ButtonVoice returnVoice={returnVoice}></ButtonVoice>
+        </InputSpanStyled>
+        <ShowcaseBookStyled>
+          {filteredBooks.map((item) => {
+            return (
+              <Card
+                key={item.id}
+                title={item.name}
+                imageUrl={item.src}
+                clickBook={clickBook}
+                id={item.id}
+                favorite={item.favorite}
+                clickBookFavorite={clickBookFavorite}
+                desc={item.describe}
+              />
+            );
+          })}
 
-        {clickOpen && <OpenCard bookOpen={dataBookOpen} />}
-      </ShowcaseBookStyled>
-    </SearchStyled >
+        </ShowcaseBookStyled>
+      </SearchStyled >
+      {clickOpen && <OpenCard bookOpen={dataBookOpen} />}
+    </>
   );
 }
