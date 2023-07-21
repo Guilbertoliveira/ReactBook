@@ -58,6 +58,16 @@
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firefox/firefox-original-wordmark.svg" width="50" title="Firefox" />
 </div> 
 
+<h2>New feat enhancements:</h2>
+<h3>Artisan model card</h3>
+<img src="https://github.com/Guilbertoliveira/ReactBook/assets/41201436/3a2bb735-426e-4765-a0a5-1821a2d1d376">
+
+<h3>Screen login with register</h3>
+<img src="https://github.com/Guilbertoliveira/ReactBook/assets/41201436/c3559ff5-df85-4f8a-b933-1bbfeab4bc3a">
+
+<h3>Searching book by voice</h3>
+<img src="https://github.com/Guilbertoliveira/ReactBook/assets/41201436/e477d639-1d30-4104-a14a-cc9f0625786e">
+
 <h2> Project link </h2>
 <a href="https://react-book-orpin.vercel.app/">Vercel Link</a>
 
