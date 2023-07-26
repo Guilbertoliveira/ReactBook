@@ -9,7 +9,6 @@ export const SearchStyled = styled.section`
   font-family: 'Acme', sans-serif;
   filter: ${(props) => (props.clicktrue ? 'brightness(0.1)' : 'brightness(1)')};
   transition: 1s;
-
 `;
 
 export const TitleStyled = styled.h2`
@@ -34,23 +33,20 @@ export const ShowcaseBookStyled = styled.section`
 `;
 
 export const InputSpanStyled = styled.span`
-display: flex;
-justify-content: center;
-gap: 10px;
-align-items: flex-start;
-transition: 1s;
-
-`
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: flex-start;
+  transition: 1s;
+`;
 
 export const ButtonStyled = styled.button`
-background-color: transparent;
-border: none;
-border-radius: 2px;
-padding: 5px 30px;
-color: white;
-font-size: 20px;
-font-family: 'Acme', sans-serif;
-box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.34);
-
-`
-
+  background-color: transparent;
+  border: none;
+  border-radius: 2px;
+  padding: 5px 30px;
+  color: white;
+  font-size: 20px;
+  font-family: 'Acme', sans-serif;
+  box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.34);
+`;

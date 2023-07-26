@@ -9,7 +9,6 @@ export const CardStyled = styled.section`
     transform: scale(1.05);
     border-radius: 3px;
   }
- 
 `;
 
 export const ImgStyled = styled.img`
@@ -26,7 +25,5 @@ export const DivFavoriteStyled = styled.div`
 `;
 
 export const PStyled = styled.p`
-display: none;
-`
-
-
+  display: none;
+`;

@@ -5,7 +5,7 @@ import {
   TitleStyled,
   ShowcaseBookStyled,
   InputSpanStyled,
-  ButtonStyled
+  ButtonStyled,
 } from './styles';
 import { useEffect, useState } from 'react';
 import Card from 'components/Card';
@@ -23,7 +23,6 @@ export default function Search() {
 
   useEffect(() => {
     fetchBooks();
-
   }, []);
 
   async function fetchBooks() {
@@ -33,7 +32,7 @@ export default function Search() {
 
   const filteredBooks = useMemo(() => {
     const escrita = new RegExp(searchValue, 'gi');
-    return book.filter((e) => e.name.match(escrita)?.length)
+    return book.filter((e) => e.name.match(escrita)?.length);
   }, [book, searchValue]);
 
   async function clickBook(key, favoriteBoolean) {
@@ -44,18 +43,17 @@ export default function Search() {
 
   function clickBookFavorite(e) {
     setClickOpen(!clickOpen);
-    document.body.style.overflow = !clickOpen ? "hidden" : ""
+    document.body.style.overflow = !clickOpen ? 'hidden' : '';
     setDataBookOpen(e.children);
   }
 
   function returnVoice(text) {
-    setSearchValue(text)
+    setSearchValue(text);
   }
 
   return (
-
     <>
-      < SearchStyled clicktrue={clickOpen} >
+      <SearchStyled clicktrue={clickOpen}>
         <TitleStyled>Ja sabe por onde começar?</TitleStyled>
         <SubTitleStyled>Encontre seu livro em nossa estante</SubTitleStyled>
         <InputSpanStyled>
@@ -69,27 +67,31 @@ export default function Search() {
           <ButtonVoice returnVoice={returnVoice}></ButtonVoice>
         </InputSpanStyled>
         <ShowcaseBookStyled>
-          {filteredBooks.length >= 1 ? filteredBooks.map((item) => {
-            return (
-              <Card
-                key={item.id}
-                title={item.name}
-                imageUrl={item.src}
-                clickBook={clickBook}
-                id={item.id}
-                favorite={item.favorite}
-                clickBookFavorite={clickBookFavorite}
-                desc={item.describe}
-              />
-            );
-          }) :
+          {filteredBooks.length >= 1 ? (
+            filteredBooks.map((item) => {
+              return (
+                <Card
+                  key={item.id}
+                  title={item.name}
+                  imageUrl={item.src}
+                  clickBook={clickBook}
+                  id={item.id}
+                  favorite={item.favorite}
+                  clickBookFavorite={clickBookFavorite}
+                  desc={item.describe}
+                />
+              );
+            })
+          ) : (
             <div>
               <TitleStyled>Livro procurado não foi encontrado</TitleStyled>
-              <ButtonStyled onClick={() => setSearchValue("")}>Voltar</ButtonStyled>
-            </div>}
-
+              <ButtonStyled onClick={() => setSearchValue('')}>
+                Voltar
+              </ButtonStyled>
+            </div>
+          )}
         </ShowcaseBookStyled>
-      </SearchStyled >
+      </SearchStyled>
       {clickOpen && <OpenCard bookOpen={dataBookOpen} />}
     </>
   );

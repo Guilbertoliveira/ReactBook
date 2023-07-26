@@ -13,7 +13,6 @@ export const FormStyled = styled.form`
   border-radius: 40px;
   font-family: 'Acme', sans-serif;
   background-color: rgba(0, 47, 82, 0.89);
-;
 `;
 
 export const SectionStyled = styled.section`
@@ -22,7 +21,7 @@ export const SectionStyled = styled.section`
   align-items: center;
   height: 100vh;
   background-color: hsla(0, 100%, 50%, 1);
-  background-image: url('https://guiadoestudante.abril.com.br/wp-content/uploads/sites/4/2020/05/nota-livros-jornalismo.jpg?quality=100&strip=info&w=1280&h=720&crop=1')
+  background-image: url('https://guiadoestudante.abril.com.br/wp-content/uploads/sites/4/2020/05/nota-livros-jornalismo.jpg?quality=100&strip=info&w=1280&h=720&crop=1');
 `;
 
 export const EmailStyled = styled.div`

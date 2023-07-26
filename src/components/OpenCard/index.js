@@ -7,7 +7,7 @@ import {
   TitleStyled,
   PStyled,
   PCategoryStyled,
-  SpanStyled
+  SpanStyled,
 } from './styles';
 import { useState } from 'react';
 
@@ -31,9 +31,7 @@ export default function OpenCard(props) {
 
         <DivDescribeStyled>
           <TitleStyled>{bookOpen.name}</TitleStyled>
-          <PStyled>
-            {bookOpen.desc}
-          </PStyled>
+          <PStyled>{bookOpen.desc}</PStyled>
           <SpanStyled>
             <PCategoryStyled>+18</PCategoryStyled>
             <PCategoryStyled>Drama</PCategoryStyled>
