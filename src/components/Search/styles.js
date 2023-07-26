@@ -42,3 +42,15 @@ transition: 1s;
 
 `
 
+export const ButtonStyled = styled.button`
+background-color: transparent;
+border: none;
+border-radius: 2px;
+padding: 5px 30px;
+color: white;
+font-size: 20px;
+font-family: 'Acme', sans-serif;
+box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.34);
+
+`
+
