@@ -4,15 +4,15 @@ import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 export default function Card({
   title,
   imageUrl,
-  clickBook,
+  clickFavorite,
   id,
   favorite,
-  clickBookFavorite,
+  clickOpenBook,
   desc,
 }) {
-  function teste(e) {
-    if (clickBookFavorite) {
-      return clickBookFavorite(e);
+  function test(e) {
+    if (clickOpenBook) {
+      return clickOpenBook(e);
     }
 
     console.log('nao disponivel');
@@ -26,13 +26,13 @@ export default function Card({
             <AiFillStar
               title="desfavoritar"
               style={{ fontSize: 26, color: 'yellow' }}
-              onClick={() => clickBook(id, favorite)}
+              onClick={() => clickFavorite(id, favorite)}
             ></AiFillStar>
           ) : (
             <AiOutlineStar
               title="favoritar"
               style={{ fontSize: 26, color: 'yellow' }}
-              onClick={() => clickBook(id, favorite)}
+              onClick={() => clickFavorite(id, favorite)}
             ></AiOutlineStar>
           )}
         </DivFavoriteStyled>
@@ -40,7 +40,7 @@ export default function Card({
         <div>
           <h1>{title}</h1>
           <ImgStyled
-            onClick={(event) => teste(event.target.parentNode)}
+            onClick={(event) => test(event.target.parentNode)}
             src={imageUrl}
             alt={`imagem do livro ${imageUrl}`}
           ></ImgStyled>

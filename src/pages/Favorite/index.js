@@ -13,14 +13,14 @@ export default function Favorite() {
 
   useEffect(() => {
     fetchFavorites();
-  }, [clickBook]);
+  }, [clickFavorite]);
 
   async function fetchFavorites() {
     const responseFav = await getFavorites();
     setFavorites(responseFav);
   }
 
-  async function clickBook(key) {
+  async function clickFavorite(key) {
     console.log('remover');
     console.log(key);
     await patchBooks(key, false);
@@ -51,7 +51,7 @@ export default function Favorite() {
                 title={favorite.name}
                 key={favorite.id}
                 imageUrl={favorite.src}
-                clickBook={clickBook}
+                clickFavorite={clickFavorite}
                 id={favorite.id}
                 favorite={true}
                 clickBookFavorite={() => clickBookFavorite()}

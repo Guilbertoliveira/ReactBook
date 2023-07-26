@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const DivStyled = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: start;
+
 `;
 
 export const UlStyled = styled.ul`

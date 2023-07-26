@@ -35,16 +35,18 @@ export default function Search() {
     return book.filter((e) => e.name.match(escrita)?.length);
   }, [book, searchValue]);
 
-  async function clickBook(key, favoriteBoolean) {
+  async function clickFavorite(key, favoriteBoolean) {
     patchBooks(key, true);
     await insertFavorites(key);
     fetchBooks();
+    console.log('Favoritado')
   }
 
-  function clickBookFavorite(e) {
+  function clickOpenBook(e) {
     setClickOpen(!clickOpen);
     document.body.style.overflow = !clickOpen ? 'hidden' : '';
     setDataBookOpen(e.children);
+    console.log('Livro aberto')
   }
 
   function returnVoice(text) {
@@ -54,8 +56,7 @@ export default function Search() {
   return (
     <>
       <SearchStyled clicktrue={clickOpen}>
-        <TitleStyled>Ja sabe por onde começar?</TitleStyled>
-        <SubTitleStyled>Encontre seu livro em nossa estante</SubTitleStyled>
+        <TitleStyled>Procure o livro que deseja</TitleStyled>
         <InputSpanStyled>
           <Input
             placeholder="Escreva sua próxima leitura"
@@ -74,10 +75,10 @@ export default function Search() {
                   key={item.id}
                   title={item.name}
                   imageUrl={item.src}
-                  clickBook={clickBook}
+                  clickFavorite={clickFavorite}
                   id={item.id}
                   favorite={item.favorite}
-                  clickBookFavorite={clickBookFavorite}
+                  clickOpenBook={clickOpenBook}
                   desc={item.describe}
                 />
               );
