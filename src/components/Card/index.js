@@ -8,8 +8,7 @@ export default function Card({
   id,
   favorite,
   clickBookFavorite,
-  desc
-
+  desc,
 }) {
   function teste(e) {
     if (clickBookFavorite) {
@@ -38,7 +37,6 @@ export default function Card({
           )}
         </DivFavoriteStyled>
 
-
         <div>
           <h1>{title}</h1>
           <ImgStyled
@@ -48,7 +46,6 @@ export default function Card({
           ></ImgStyled>
           <PStyled>{desc}</PStyled>
         </div>
-
       </CardStyled>
     </>
   );

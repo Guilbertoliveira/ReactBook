@@ -38,3 +38,15 @@ export const TitleStyled = styled.h2`
 export const PStyled = styled.p`
   font-size: 18px;
 `;
+
+export const PCategoryStyled = styled.p`
+  background-color: gray;
+  border-radius: 8px;
+  font-size: 10px;
+  padding: 5px;
+`;
+
+export const SpanStyled = styled.span`
+  display: flex;
+  gap: 10px;
+`;
