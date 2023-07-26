@@ -16,6 +16,7 @@ export const UlStyled = styled.ul`
 
 export const DivStyledCard = styled.div`
   width: 99vw;
+  z-index: 0;
 `;
 
 export const TitleStyled = styled.h3`

@@ -5,4 +5,5 @@ export const ReleaseSectionStyled = styled.section`
   gap: 30px;
   justify-content: center;
   flex-wrap: wrap;
+  z-index: 0;
 `;
