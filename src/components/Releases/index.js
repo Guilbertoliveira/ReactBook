@@ -34,7 +34,7 @@ export default function Releases() {
     setBook(booksAPI);
   }
 
-  async function clickBook(key, favoriteBoolean) {
+  async function clickFavorite(key, favoriteBoolean) {
     patchBooks(key, true);
     await insertFavorites(key);
     fetchBooks();
@@ -56,7 +56,7 @@ export default function Releases() {
                 imageUrl={item.src}
                 favorite={item.favorite}
                 id={item.id}
-                clickBook={clickBook}
+                clickFavorite={clickFavorite}
                 clickBookFavorite={false}
               />
             </SwiperSlide>
@@ -66,9 +66,9 @@ export default function Releases() {
 
       <RecomCard
         title="Talvez você se interesse por"
-        subTitle="Angular 11"
-        describe="Construindo uma aplicação com a plataforma Google"
-        url={recomImage}
+        subTitle="Guia do Mochileiro das Galaxias"
+        describe="Uma aventura espacial cômica cheia de situações absurdas e personagens excêntricos."
+        url={'https://m.media-amazon.com/images/I/51qmrcyD4YL.jpg'}
       />
     </Section>
   );
