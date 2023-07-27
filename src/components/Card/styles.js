@@ -18,12 +18,24 @@ export const ImgStyled = styled.img`
 `;
 
 export const DivFavoriteStyled = styled.div`
-  left: 5px;
-  top: 45px;
+  
   display: flex;
   position: relative;
+  align-items: center;
+  justify-content: start;
 `;
 
 export const PStyled = styled.p`
   display: none;
 `;
+
+export const TitleStyled = styled.h3`
+text-overflow: ellipsis;
+overflow: hidden;
+height: 27px;
+width: 250px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* Number of lines to show */
+  -webkit-box-orient: vertical;
+
+`

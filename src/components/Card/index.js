@@ -1,4 +1,4 @@
-import { CardStyled, ImgStyled, DivFavoriteStyled, PStyled } from './styles';
+import { CardStyled, ImgStyled, DivFavoriteStyled, PStyled, TitleStyled } from './styles';
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 
 export default function Card({
@@ -35,10 +35,10 @@ export default function Card({
               onClick={() => clickFavorite(id, favorite)}
             ></AiOutlineStar>
           )}
+          <TitleStyled title={title}>{title}</TitleStyled>
         </DivFavoriteStyled>
 
         <div>
-          <h1>{title}</h1>
           <ImgStyled
             onClick={(event) => test(event.target.parentNode)}
             src={imageUrl}
