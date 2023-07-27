@@ -1,5 +1,8 @@
 import { CardStyled, ImgStyled, DivFavoriteStyled, PStyled, TitleStyled } from './styles';
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
+import { Tooltip as ReactTooltip } from 'react-tooltip'
+
+
 
 export default function Card({
   title,
@@ -18,9 +21,10 @@ export default function Card({
     console.log('nao disponivel');
   }
 
+
   return (
     <>
-      <CardStyled>
+      <CardStyled data-tooltip-id={`my-tooltip-${id}`}>
         <DivFavoriteStyled>
           {favorite ? (
             <AiFillStar
@@ -35,7 +39,8 @@ export default function Card({
               onClick={() => clickFavorite(id, favorite)}
             ></AiOutlineStar>
           )}
-          <TitleStyled title={title}>{title}</TitleStyled>
+          <TitleStyled >{title}</TitleStyled>
+
         </DivFavoriteStyled>
 
         <div>
@@ -44,9 +49,16 @@ export default function Card({
             src={imageUrl}
             alt={`imagem do livro ${imageUrl}`}
           ></ImgStyled>
-          <PStyled>{desc}</PStyled>
+          <PStyled title={title}>{desc}</PStyled>
         </div>
       </CardStyled>
+      <ReactTooltip
+        id={`my-tooltip-${id}`}
+        place="top"
+        content={title}
+        variant="info"
+
+      />
     </>
   );
 }

@@ -69,7 +69,7 @@ export default function Categories() {
                   <h3>Livro desse genero não encontrado</h3>
                 ) : filterBooksByCategory(category).length <= 5 ? (
                   filterBooksByCategory(category).map((book) => {
-                    return <Card title={book.name} imageUrl={book.src}></Card>;
+                    return <Card title={book.name} imageUrl={book.src} id={book.id}></Card>;
                   })
                 ) : (
                   <Slider settings={settings}>

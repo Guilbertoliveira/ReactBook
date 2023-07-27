@@ -46,7 +46,6 @@ export default function Search() {
     setClickOpen(!clickOpen);
     document.body.style.overflow = !clickOpen ? 'hidden' : '';
     setDataBookOpen(e.children);
-    console.log('Livro aberto')
   }
 
   function returnVoice(text) {
