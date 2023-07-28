@@ -68,6 +68,18 @@
 <h3>Searching book by voice</h3>
 <img src="https://github.com/Guilbertoliveira/ReactBook/assets/41201436/e477d639-1d30-4104-a14a-cc9f0625786e">
 
+<h3>Category page made dynamically and from 5 cards creates a carousel</h3>
+<img src="https://github.com/Guilbertoliveira/ReactBook/assets/41201436/d5194518-e10d-40cb-9966-60337941b828">
+
+<h3>Using React-tooltip</h3>
+<img src="https://github.com/Guilbertoliveira/ReactBook/assets/41201436/0bfa4e91-66d7-4729-bbe5-693bd7fdd3d0">
+
+<h3>Logout token removal</h3>
+<img src="https://github.com/Guilbertoliveira/ReactBook/assets/41201436/386ee7a7-638d-403d-b089-69b739feb348">
+
+<h3>Error page</h3>
+<img src="https://github.com/Guilbertoliveira/ReactBook/assets/41201436/f921ba89-7ebc-4600-a2dc-7251d2be0f00">
+
 <h2> Project link </h2>
 <a href="https://react-book-orpin.vercel.app/">Vercel Link</a>
 
