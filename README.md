@@ -80,9 +80,14 @@
 <h3>Error page</h3>
 <img src="https://github.com/Guilbertoliveira/ReactBook/assets/41201436/f921ba89-7ebc-4600-a2dc-7251d2be0f00">
 
+<h3>Card skeleton</h3>
+<img src="https://github.com/Guilbertoliveira/ReactBook/assets/41201436/ea8daa0d-7da4-4615-8f5f-5a2d8d26b72e">
+
+<h3>Mobile version the skeleton card is disabled</h3>
+<img src="https://github.com/Guilbertoliveira/ReactBook/assets/41201436/61e7ef2b-74b3-47ca-86fe-3671d465d02b">
+
 <h2> Project link </h2>
 <a href="https://react-book-orpin.vercel.app/">Vercel Link</a>
-
 
 <h2>To use the project:</h2>
 <ol>
