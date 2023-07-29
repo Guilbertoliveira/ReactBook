@@ -32,15 +32,15 @@ export default function Card({
         <DivFavoriteStyled>
           {favorite ? (
             <AiFillStar
-              title="desfavoritar"
               style={{ fontSize: 26, color: 'yellow' }}
               onClick={() => clickFavorite(id, favorite)}
+              data-tooltip-id={`desfavoritar-${id}`}
             ></AiFillStar>
           ) : (
             <AiOutlineStar
-              title="favoritar"
               style={{ fontSize: 26, color: 'yellow' }}
               onClick={() => clickFavorite(id, favorite)}
+              data-tooltip-id={`favoritar-${id}`}
             ></AiOutlineStar>
           )}
           <TitleStyled>{title}</TitleStyled>
@@ -60,7 +60,19 @@ export default function Card({
         id={`my-tooltip-${id}`}
         place="top"
         content={title}
-        variant="info"
+        variant="warning"
+      />
+      <ReactTooltip
+        id={`desfavoritar-${id}`}
+        place="top"
+        content="favoritado"
+        variant="success"
+      />
+      <ReactTooltip
+        id={`favoritar-${id}`}
+        place="top"
+        content="favoritar"
+        variant="dark"
       />
     </>
   );

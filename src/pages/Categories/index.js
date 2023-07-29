@@ -7,6 +7,7 @@ import Card from 'components/Card';
 import Slider from 'commons/Slider';
 import { SwiperSlide } from 'swiper/react';
 import OpenCard from 'components/OpenCard';
+import { SkeletonCard } from 'components/SkeletonCard';
 
 export default function Categories() {
   const bookCategory = [
@@ -75,7 +76,10 @@ export default function Categories() {
               <TitleStyled> {category}</TitleStyled>
               <UlStyled>
                 {filterBooksByCategory(category).length === 0 ? (
-                  <h3>Livro desse genero não encontrado</h3>
+                  <>
+                    <h3>Livro desse genero não encontrado</h3>
+
+                  </>
                 ) : filterBooksByCategory(category).length <= 5 ? (
                   filterBooksByCategory(category).map((book) => {
                     return (

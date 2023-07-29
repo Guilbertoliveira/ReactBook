@@ -3,7 +3,7 @@ import { BiSolidFoodMenu } from 'react-icons/bi';
 import { MdMenuBook } from 'react-icons/md';
 
 export const HeaderStyled = styled.header`
-  background: ${(props) => (props.scroll ? 'transparent' : 'white')};
+  background: ${(props) => (props.scroll ? 'rgba(0,0,0,0.40)' : 'white')};
   backdrop-filter: blur(5px);
   box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.84);
   display: flex;
