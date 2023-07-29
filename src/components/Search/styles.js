@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import imageBoat from './teste.svg'
 
 export const SearchStyled = styled.section`
   background-image: linear-gradient(90deg, #002f52 35%, #326589 165%);
@@ -16,6 +17,16 @@ export const TitleStyled = styled.h2`
   font-size: 36px;
   text-align: center;
   width: 100%;
+
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 30px; 
+    height: 30px; 
+    background-image: url(${imageBoat}); 
+    background-size: cover;
+    margin-left: 10px; 
+  }
 `;
 
 export const SubTitleStyled = styled.h3`

@@ -1,0 +1,18 @@
+export const bookCategory = [
+    'Drama',
+    'Ficção',
+    'Romance',
+    'Comédia',
+    'Horror',
+    'Ficção Científica',
+    'Ficção Distópica',
+    'Ação',
+    'Fantasia',
+    'Distopia',
+    'Infantil',
+    'Aventura',
+    'Mistério',
+    'Autoajuda',
+    'Suspense',
+    'Terror',
+];

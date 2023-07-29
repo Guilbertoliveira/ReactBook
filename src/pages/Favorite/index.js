@@ -21,8 +21,6 @@ export default function Favorite() {
   }
 
   async function clickFavorite(key) {
-    console.log('remover');
-    console.log(key);
     await patchBooks(key, false);
     await deleteFavorites(key);
     fetchFavorites();

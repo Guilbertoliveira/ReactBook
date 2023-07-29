@@ -27,7 +27,7 @@ export const ImgCardStyled = styled.img`
 
 export const DivDescribeStyled = styled.div`
   margin: 40px;
-  width: 30vw;
+  width: 40vw;
   word-wrap: break-word;
 `;
 
@@ -37,6 +37,8 @@ export const TitleStyled = styled.h2`
 
 export const PStyled = styled.p`
   font-size: 18px;
+  overflow: hidden;
+  height: 40%;
 `;
 
 export const PCategoryStyled = styled.p`

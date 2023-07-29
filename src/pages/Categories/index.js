@@ -7,30 +7,17 @@ import Card from 'components/Card';
 import Slider from 'commons/Slider';
 import { SwiperSlide } from 'swiper/react';
 import OpenCard from 'components/OpenCard';
+import { SkeletonCard } from 'components/SkeletonCard';
+import { bookCategory } from './data';
 
 export default function Categories() {
-  const bookCategory = [
-    'Drama',
-    'Ficção',
-    'Romance',
-    'Comédia',
-    'Horror',
-    'Ficção Científica',
-    'Ficção Distópica',
-    'Ação',
-    'Fantasia',
-    'Distopia',
-    'Infantil',
-    'Aventura',
-    'Mistério',
-    'Autoajuda',
-    'Suspense',
-    'Terror',
-  ];
   const [books, setBooks] = useState([]);
   const [filter, setFilter] = useState([]);
   const [clickOpen, setClickOpen] = useState(false);
   const [dataBookOpen, setDataBookOpen] = useState([]);
+  const [mQuery, setMQuery] = useState({
+    matches: window.innerWidth > 882,
+  });
 
   function clickOpenBook(e) {
     setClickOpen(!clickOpen);
@@ -63,6 +50,12 @@ export default function Categories() {
   }
 
   useEffect(() => {
+    const mediaQuery = window.matchMedia("(min-width: 882px)");
+
+    mediaQuery.addEventListener("change", (event) => {
+      setMQuery({ matches: event.matches });
+    });
+
     fetchBooks();
   }, []);
 
@@ -75,21 +68,29 @@ export default function Categories() {
               <TitleStyled> {category}</TitleStyled>
               <UlStyled>
                 {filterBooksByCategory(category).length === 0 ? (
-                  <h3>Livro desse genero não encontrado</h3>
-                ) : filterBooksByCategory(category).length <= 5 ? (
-                  filterBooksByCategory(category).map((book) => {
-                    return (
-                      <Card
-                        title={book.name}
-                        imageUrl={book.src}
-                        id={book.id}
-                        desc={book.describe}
-                        category={book.category}
-                        clickOpenBook={clickOpenBook}
-                      ></Card>
-                    );
-                  })
-                ) : (
+                  <>
+                    <h3>Livro desse genero não encontrado</h3>
+                  </>
+                ) : filterBooksByCategory(category).length <= 5
+                  ?
+                  <>
+                    {filterBooksByCategory(category).map((book) => {
+                      return (
+                        <Card
+                          title={book.name}
+                          imageUrl={book.src}
+                          id={book.id}
+                          desc={book.describe}
+                          category={book.category}
+                          clickOpenBook={clickOpenBook}
+                        ></Card>
+                      );
+                    })}
+                    {mQuery.matches && [...Array(5 - filterBooksByCategory(category).length)].map((_, i) =>
+                      <SkeletonCard key={i} />
+                    )}
+                  </>
+                  :
                   <Slider settings={settings}>
                     {filterBooksByCategory(category).map((item) => {
                       return (
@@ -106,7 +107,7 @@ export default function Categories() {
                       );
                     })}
                   </Slider>
-                )}
+                }
               </UlStyled>
             </DivStyledCard>
           ))}
