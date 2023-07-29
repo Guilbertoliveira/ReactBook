@@ -1,4 +1,4 @@
-import { CardStyled, ImgStyled, DivFavoriteStyled, PStyled, TitleStyled } from './styles';
+import { CardStyled, ImgStyled, DivFavoriteStyled, PStyled, TitleStyled, CategoryStyled } from './styles';
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 import { Tooltip as ReactTooltip } from 'react-tooltip'
 
@@ -12,6 +12,7 @@ export default function Card({
   favorite,
   clickOpenBook,
   desc,
+  category
 }) {
   function test(e) {
     if (clickOpenBook) {
@@ -50,6 +51,7 @@ export default function Card({
             alt={`imagem do livro ${imageUrl}`}
           ></ImgStyled>
           <PStyled title={title}>{desc}</PStyled>
+          <CategoryStyled>{category}</CategoryStyled>
         </div>
       </CardStyled>
       <ReactTooltip

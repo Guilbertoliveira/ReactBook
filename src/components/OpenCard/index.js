@@ -22,6 +22,7 @@ export default function OpenCard(props) {
       url: props.bookOpen[0].src,
       alt: props.bookOpen[0].alt,
       desc: props.bookOpen[1].textContent,
+      category: props.bookOpen[2].textContent,
     });
   }, []);
 
@@ -34,8 +35,7 @@ export default function OpenCard(props) {
           <TitleStyled>{bookOpen.name}</TitleStyled>
           <PStyled>{bookOpen.desc}</PStyled>
           <SpanStyled>
-            <PCategoryStyled>+18</PCategoryStyled>
-            <PCategoryStyled>Drama</PCategoryStyled>
+            <PCategoryStyled>{bookOpen.category}</PCategoryStyled>
           </SpanStyled>
         </DivDescribeStyled>
       </CardStyled>
