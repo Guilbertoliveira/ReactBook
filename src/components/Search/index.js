@@ -93,7 +93,7 @@ export default function Search() {
           )}
         </ShowcaseBookStyled>
       </SearchStyled>
-      {clickOpen && <OpenCard bookOpen={dataBookOpen} />}
+      {clickOpen && <OpenCard dataBookOpen={dataBookOpen} clickOpen={clickOpen} setClickOpen={setClickOpen} />}
     </>
   );
 }

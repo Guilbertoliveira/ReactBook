@@ -50,3 +50,14 @@ export const SpanStyled = styled.span`
   display: flex;
   gap: 10px;
 `;
+
+export const ButtonStyled = styled.button`
+  border: none;
+  background-color: orange;
+  border-radius: 10px;
+  width: 100px;
+  height: 35px;
+  color: white;
+  font-family: 'Acme', sans-serif;
+  margin: 0 auto;
+  `
