@@ -60,4 +60,4 @@ export const ButtonStyled = styled.button`
   color: white;
   font-family: 'Acme', sans-serif;
   margin: 0 auto;
-  `
+`;

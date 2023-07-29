@@ -8,7 +8,7 @@ import {
   PStyled,
   PCategoryStyled,
   SpanStyled,
-  ButtonStyled
+  ButtonStyled,
 } from './styles';
 import { useState } from 'react';
 
@@ -17,7 +17,6 @@ export default function OpenCard({ dataBookOpen, clickOpen, setClickOpen }) {
   let [openModel, setOpenModel] = useState(true);
 
   useEffect(() => {
-    console.log('teste', dataBookOpen)
     setBookOpen({
       name: dataBookOpen[1].title,
       url: dataBookOpen[0].src,

@@ -39,7 +39,7 @@ export default function Search() {
     patchBooks(key, true);
     await insertFavorites(key);
     fetchBooks();
-    console.log('Favoritado')
+    console.log('Favoritado');
   }
 
   function clickOpenBook(e) {
@@ -93,7 +93,13 @@ export default function Search() {
           )}
         </ShowcaseBookStyled>
       </SearchStyled>
-      {clickOpen && <OpenCard dataBookOpen={dataBookOpen} clickOpen={clickOpen} setClickOpen={setClickOpen} />}
+      {clickOpen && (
+        <OpenCard
+          dataBookOpen={dataBookOpen}
+          clickOpen={clickOpen}
+          setClickOpen={setClickOpen}
+        />
+      )}
     </>
   );
 }

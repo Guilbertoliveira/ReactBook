@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import Card from 'components/Card';
 import Slider from 'commons/Slider';
 import { SwiperSlide } from 'swiper/react';
+import OpenCard from 'components/OpenCard';
 
 export default function Categories() {
   const bookCategory = [
@@ -28,6 +29,14 @@ export default function Categories() {
   ];
   const [books, setBooks] = useState([]);
   const [filter, setFilter] = useState([]);
+  const [clickOpen, setClickOpen] = useState(false);
+  const [dataBookOpen, setDataBookOpen] = useState([]);
+
+  function clickOpenBook(e) {
+    setClickOpen(!clickOpen);
+    document.body.style.overflow = !clickOpen ? 'hidden' : '';
+    setDataBookOpen(e.children);
+  }
 
   const settings = {
     spaceBetween: 10,
@@ -59,7 +68,7 @@ export default function Categories() {
 
   return (
     <>
-      <Section>
+      <Section clicktrue={clickOpen}>
         <DivStyled>
           {bookCategory.map((category) => (
             <DivStyledCard>
@@ -69,7 +78,16 @@ export default function Categories() {
                   <h3>Livro desse genero não encontrado</h3>
                 ) : filterBooksByCategory(category).length <= 5 ? (
                   filterBooksByCategory(category).map((book) => {
-                    return <Card title={book.name} imageUrl={book.src} id={book.id}></Card>;
+                    return (
+                      <Card
+                        title={book.name}
+                        imageUrl={book.src}
+                        id={book.id}
+                        desc={book.describe}
+                        category={book.category}
+                        clickOpenBook={clickOpenBook}
+                      ></Card>
+                    );
                   })
                 ) : (
                   <Slider settings={settings}>
@@ -95,6 +113,13 @@ export default function Categories() {
         </DivStyled>
       </Section>
       <Releases></Releases>
+      {clickOpen && (
+        <OpenCard
+          dataBookOpen={dataBookOpen}
+          clickOpen={clickOpen}
+          setClickOpen={setClickOpen}
+        />
+      )}
     </>
   );
 }
