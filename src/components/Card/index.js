@@ -19,12 +19,11 @@ export default function Card({
   desc,
   category,
 }) {
-  function test(e) {
+  function validationClick(e) {
     if (clickOpenBook) {
-      console.log(clickOpenBook);
       return clickOpenBook(e);
     }
-    return clickOpenBook(e);
+    alert('não disponivel no momento')
   }
 
   return (
@@ -49,7 +48,7 @@ export default function Card({
 
         <div>
           <ImgStyled
-            onClick={(event) => test(event.target.parentNode)}
+            onClick={(event) => validationClick(event.target.parentNode)}
             src={imageUrl}
             alt={`imagem do livro ${imageUrl}`}
           ></ImgStyled>
