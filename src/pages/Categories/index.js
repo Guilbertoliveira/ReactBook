@@ -50,12 +50,13 @@ export default function Categories() {
   }
 
   useEffect(() => {
-    let mediaQuery = window.matchMedia("(min-width: 882px)");
-    mediaQuery.addListener(setMQuery);
+    const mediaQuery = window.matchMedia("(min-width: 882px)");
+
+    mediaQuery.addEventListener("change", (event) => {
+      setMQuery({ matches: event.matches });
+    });
 
     fetchBooks();
-
-    return () => mediaQuery.removeListener(setMQuery);
   }, []);
 
   return (
