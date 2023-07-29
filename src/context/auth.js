@@ -37,7 +37,7 @@ export function AuthProvider({ children }) {
       setUser(loggedUser);
       navigate('/');
     } catch (error) {
-      alert('moio');
+      alert('erro ao tentar logar');
     }
   }
 

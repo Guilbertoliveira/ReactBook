@@ -79,6 +79,7 @@ export default function Search() {
                   favorite={item.favorite}
                   clickOpenBook={clickOpenBook}
                   desc={item.describe}
+                  category={item.category}
                 />
               );
             })

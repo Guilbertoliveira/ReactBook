@@ -29,6 +29,10 @@ export const PStyled = styled.p`
   display: none;
 `;
 
+export const CategoryStyled = styled.p`
+  display: none;
+`
+
 export const TitleStyled = styled.h3`
 text-overflow: ellipsis;
 overflow: hidden;
