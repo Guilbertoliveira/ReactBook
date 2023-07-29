@@ -10,6 +10,8 @@ export const SectionStyled = styled.section`
   box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.6);
   position: relative;
   z-index: 0;
+  filter: ${(props) => (props.clicktrue ? 'brightness(0.1)' : 'brightness(1)')};
+  transition: 1s;
 `;
 
 export const SubTitleStyled = styled.h2`

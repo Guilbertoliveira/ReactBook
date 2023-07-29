@@ -5,9 +5,14 @@ export default function Section({
   title,
   fontColor,
   backgroundColor,
+  clicktrue,
 }) {
   return (
-    <SectionStyled fontColor={fontColor} backgroundColor={backgroundColor}>
+    <SectionStyled
+      fontColor={fontColor}
+      backgroundColor={backgroundColor}
+      clicktrue={clicktrue}
+    >
       <SubTitleStyled>{title}</SubTitleStyled>
       {children}
     </SectionStyled>

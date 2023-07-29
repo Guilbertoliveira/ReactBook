@@ -1,8 +1,13 @@
-import { CardStyled, ImgStyled, DivFavoriteStyled, PStyled, TitleStyled, CategoryStyled } from './styles';
+import {
+  CardStyled,
+  ImgStyled,
+  DivFavoriteStyled,
+  PStyled,
+  TitleStyled,
+  CategoryStyled,
+} from './styles';
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
-import { Tooltip as ReactTooltip } from 'react-tooltip'
-
-
+import { Tooltip as ReactTooltip } from 'react-tooltip';
 
 export default function Card({
   title,
@@ -12,16 +17,15 @@ export default function Card({
   favorite,
   clickOpenBook,
   desc,
-  category
+  category,
 }) {
   function test(e) {
     if (clickOpenBook) {
+      console.log(clickOpenBook);
       return clickOpenBook(e);
     }
-
-    console.log('nao disponivel');
+    return clickOpenBook(e);
   }
-
 
   return (
     <>
@@ -40,8 +44,7 @@ export default function Card({
               onClick={() => clickFavorite(id, favorite)}
             ></AiOutlineStar>
           )}
-          <TitleStyled >{title}</TitleStyled>
-
+          <TitleStyled>{title}</TitleStyled>
         </DivFavoriteStyled>
 
         <div>
@@ -59,7 +62,6 @@ export default function Card({
         place="top"
         content={title}
         variant="info"
-
       />
     </>
   );
