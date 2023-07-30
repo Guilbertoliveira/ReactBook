@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import imageBoat from './icon.svg'
 
 export const OpenCardStyled = styled.section`
   background-color: rgba(0, 47, 81, 0.99);
@@ -44,8 +45,9 @@ export const PStyled = styled.p`
 export const PCategoryStyled = styled.p`
   background-color: gray;
   border-radius: 8px;
-  font-size: 10px;
-  padding: 5px;
+  font-size: 12px;
+  padding: 5px 18px;
+  font-family: 'Acme', sans-serif;
 `;
 
 export const SpanStyled = styled.span`
@@ -62,4 +64,22 @@ export const ButtonStyled = styled.button`
   color: white;
   font-family: 'Acme', sans-serif;
   margin: 0 auto;
+  cursor: pointer;
+  position: relative;
+
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 40px; 
+    height: 40px; 
+    background-image: url(${imageBoat}); 
+    background-size: cover;
+    margin-left: 10px; 
+    position: absolute;
+    top: -20px;
+    left: 60px; 
+  }
+
+
 `;
+

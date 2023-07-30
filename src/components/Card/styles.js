@@ -6,7 +6,7 @@ export const CardStyled = styled.section`
 
   &:hover {
     background-color: rgba(0, 0, 0, 0.05);
-    transform: scale(1.05);
+    transform: scale(1.06);
     border-radius: 3px;
   }
 `;
