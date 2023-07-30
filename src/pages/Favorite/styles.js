@@ -5,4 +5,5 @@ export const FavoritesCardStyled = styled.section`
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
+  margin-bottom: 50px;
 `;
