@@ -10,9 +10,8 @@ export const ImgStyled = styled.div`
   box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.03);
   width: 300px;
   height: 420px;
-  background-color: rgba(221, 221, 223, 0.3); 
+  background-color: rgba(221, 221, 223, 0.3);
   border-radius: 2px;
-;
 `;
 
 export const DivFavoriteStyled = styled.div`
@@ -38,6 +37,6 @@ export const TitleStyled = styled.h3`
   display: -webkit-box;
   -webkit-line-clamp: 1; /* Number of lines to show */
   -webkit-box-orient: vertical;
-  background-color: rgba(221, 221, 223, 0.3); 
+  background-color: rgba(221, 221, 223, 0.3);
   border-radius: 10px;
 `;

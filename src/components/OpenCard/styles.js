@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import imageBoat from './icon.svg'
+import imageBoat from './assets/icon.svg';
 
 export const OpenCardStyled = styled.section`
   background-color: rgba(0, 47, 81, 0.99);
@@ -70,16 +70,13 @@ export const ButtonStyled = styled.button`
   &::after {
     content: '';
     display: inline-block;
-    width: 40px; 
-    height: 40px; 
-    background-image: url(${imageBoat}); 
+    width: 40px;
+    height: 40px;
+    background-image: url(${imageBoat});
     background-size: cover;
-    margin-left: 10px; 
+    margin-left: 10px;
     position: absolute;
     top: -20px;
-    left: 60px; 
+    left: 60px;
   }
-
-
 `;
-

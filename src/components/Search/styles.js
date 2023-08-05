@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import imageBoat from './boaticon.svg'
+import imageBoat from './assets/boaticon.svg';
 
 export const SearchStyled = styled.section`
   background-image: linear-gradient(90deg, #002f52 35%, #326589 165%);
@@ -21,28 +21,27 @@ export const TitleStyled = styled.h2`
   &::after {
     content: '';
     display: inline-block;
-    width: 30px; 
-    height: 30px; 
-    background-image: url(${imageBoat}); 
+    width: 30px;
+    height: 30px;
+    background-image: url(${imageBoat});
     background-size: cover;
-    margin-left: 10px; 
+    margin-left: 10px;
   }
 
   &::before {
     content: '';
     display: inline-block;
-    width: 30px; 
-    height: 30px; 
-    background-image: url(${imageBoat}); 
+    width: 30px;
+    height: 30px;
+    background-image: url(${imageBoat});
     background-size: cover;
-    margin-right: 10px; 
+    margin-right: 10px;
     transform: scaleX(-1);
   }
 
   @media screen and (max-width: 480px) {
     font-size: 22px;
-
-}
+  }
 `;
 
 export const SubTitleStyled = styled.h3`

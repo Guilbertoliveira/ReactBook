@@ -45,7 +45,6 @@ export default function Releases() {
       title={'Lançamentos'}
       fontColor={'white'}
       backgroundColor={'rgb(0, 47, 90)'}
-
     >
       <Slider settings={settings}>
         {book.map((item, index) => {

@@ -5,7 +5,7 @@ import {
   IconeMenuAltStyled,
   ButtonStyled,
 } from './styles';
-import logo from './avatarbook.png';
+import logo from './assets/avatarbook.png';
 import NavOptions from 'components/NavOptions';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';

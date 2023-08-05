@@ -50,9 +50,9 @@ export default function Categories() {
   }
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(min-width: 882px)");
+    const mediaQuery = window.matchMedia('(min-width: 882px)');
 
-    mediaQuery.addEventListener("change", (event) => {
+    mediaQuery.addEventListener('change', (event) => {
       setMQuery({ matches: event.matches });
     });
 
@@ -71,8 +71,7 @@ export default function Categories() {
                   <>
                     <h3>Livro desse genero não encontrado</h3>
                   </>
-                ) : filterBooksByCategory(category).length <= 5
-                  ?
+                ) : filterBooksByCategory(category).length <= 5 ? (
                   <>
                     {filterBooksByCategory(category).map((book) => {
                       return (
@@ -86,11 +85,12 @@ export default function Categories() {
                         ></Card>
                       );
                     })}
-                    {mQuery.matches && [...Array(5 - filterBooksByCategory(category).length)].map((_, i) =>
-                      <SkeletonCard key={i} />
-                    )}
+                    {mQuery.matches &&
+                      [
+                        ...Array(5 - filterBooksByCategory(category).length),
+                      ].map((_, i) => <SkeletonCard key={i} />)}
                   </>
-                  :
+                ) : (
                   <Slider settings={settings}>
                     {filterBooksByCategory(category).map((item) => {
                       return (
@@ -107,7 +107,7 @@ export default function Categories() {
                       );
                     })}
                   </Slider>
-                }
+                )}
               </UlStyled>
             </DivStyledCard>
           ))}
