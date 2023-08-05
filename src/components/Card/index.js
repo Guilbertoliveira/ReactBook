@@ -23,7 +23,7 @@ export default function Card({
     if (clickOpenBook) {
       return clickOpenBook(e);
     }
-    alert('não disponivel no momento')
+    alert('não disponivel no momento');
   }
 
   return (

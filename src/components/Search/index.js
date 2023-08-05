@@ -16,14 +16,11 @@ import OpenCard from 'components/OpenCard';
 import ButtonVoice from 'components/ButtonVoice';
 import { randomPhrases } from './dates';
 
-
 export default function Search() {
   const [book, setBook] = useState([]);
   const [searchValue, setSearchValue] = useState('');
   const [clickOpen, setClickOpen] = useState(false);
   const [dataBookOpen, setDataBookOpen] = useState([]);
-
-
 
   useEffect(() => {
     fetchBooks();
@@ -55,8 +52,6 @@ export default function Search() {
   function returnVoice(text) {
     setSearchValue(text);
   }
-
-
 
   return (
     <>
