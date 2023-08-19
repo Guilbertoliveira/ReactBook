@@ -16,7 +16,7 @@
     "react-tooltip": "^5.19.0",
     "styled-components": "^6.0.7",
     "swiper": "^9.4.1",
-    "web-vitals": "^3.3.2"
+    "web-vitals": "^3.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
