@@ -9,7 +9,7 @@ export const CardRecomStyled = styled.section`
   align-items: center;
   gap: 20px;
   border-radius: 4px;
-  margin: 20px auto;
+  margin: 20px auto 100px auto ;
   font-family: 'Roboto Slab', serif;
   padding: 10px;
   background-color: rgba(38, 64, 167, 0.6);

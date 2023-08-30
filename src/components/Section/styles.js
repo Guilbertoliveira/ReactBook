@@ -19,4 +19,5 @@ export const SubTitleStyled = styled.h2`
   padding-top: 30px;
   font-size: 40px;
   z-index: 0;
+  display: ${(props) => (props.subtitle ? 'block' : 'none')};;
 `;
