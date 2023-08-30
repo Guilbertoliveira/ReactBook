@@ -14,7 +14,7 @@ export const HeaderStyled = styled.header`
   align-items: center;
   transition: 1s;
   width: 100vw;
-
+  top: 0px;
   @media screen and (max-width: 610px) {
     justify-content: space-between;
   }

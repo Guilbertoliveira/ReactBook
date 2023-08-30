@@ -6,6 +6,7 @@ export default function Section({
   fontColor,
   backgroundColor,
   clicktrue,
+  subtitle
 }) {
   return (
     <SectionStyled
@@ -13,7 +14,7 @@ export default function Section({
       backgroundColor={backgroundColor}
       clicktrue={clicktrue}
     >
-      <SubTitleStyled>{title}</SubTitleStyled>
+      <SubTitleStyled subtitle={subtitle}>{title}</SubTitleStyled>
       {children}
     </SectionStyled>
   );

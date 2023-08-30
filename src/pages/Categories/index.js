@@ -1,7 +1,7 @@
 import Releases from 'components/Releases';
 import Section from 'components/Section';
 import { DivStyled, UlStyled, DivStyledCard, TitleStyled } from './styles';
-import { getBooks } from 'services/books';
+import { booksAPI, getBooks } from 'services/books';
 import { useEffect, useState } from 'react';
 import Card from 'components/Card';
 import Slider from 'commons/Slider';
@@ -9,15 +9,19 @@ import { SwiperSlide } from 'swiper/react';
 import OpenCard from 'components/OpenCard';
 import { SkeletonCard } from 'components/SkeletonCard';
 import { bookCategory } from './data';
+import { useQuery } from "react-query";
+import LoadingModal from 'components/LoadingModal';
 
 export default function Categories() {
-  const [books, setBooks] = useState([]);
-  const [filter, setFilter] = useState([]);
   const [clickOpen, setClickOpen] = useState(false);
   const [dataBookOpen, setDataBookOpen] = useState([]);
   const [mQuery, setMQuery] = useState({
     matches: window.innerWidth > 882,
   });
+  const { data, isLoading } = useQuery("/", () => {
+
+    return booksAPI.get().then(response => response.data)
+  })
 
   function clickOpenBook(e) {
     setClickOpen(!clickOpen);
@@ -39,15 +43,10 @@ export default function Categories() {
   };
 
   const filterBooksByCategory = (category) => {
-    return books.filter((book) => book.category === category);
+    return data.filter((book) => book.category === category);
   };
 
   bookCategory.sort((livro1, livro2) => livro1.localeCompare(livro2));
-
-  async function fetchBooks() {
-    const booksAPI = await getBooks();
-    setBooks(booksAPI);
-  }
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(min-width: 882px)');
@@ -56,8 +55,12 @@ export default function Categories() {
       setMQuery({ matches: event.matches });
     });
 
-    fetchBooks();
   }, []);
+
+
+  if (isLoading) {
+    return <LoadingModal />
+  }
 
   return (
     <>

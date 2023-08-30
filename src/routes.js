@@ -9,8 +9,14 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 import { AuthContext, AuthProvider } from 'context/auth';
 import { useContext } from 'react';
+import { QueryClient, QueryClientProvider } from 'react-query'
+
+
 
 export default function RoutesPage() {
+
+  const queryClient = new QueryClient()
+
   function Private({ children }) {
     const { authenticated, loading } = useContext(AuthContext);
 
@@ -27,51 +33,53 @@ export default function RoutesPage() {
   return (
     <BrowserRouter>
       <AuthProvider>
-        <Routes>
-          <Route element={<Theme></Theme>}>
-            <Route
-              index
-              element={
-                <Private>
-                  <Home></Home>
-                </Private>
-              }
-            />
-            <Route
-              path="/favoritos"
-              element={
-                <Private>
-                  <Favorite />
-                </Private>
-              }
-            />
-            <Route
-              path="/categoria"
-              element={
-                <Private>
-                  <Categories />
-                </Private>
-              }
-            ></Route>
-            <Route
-              path="/estante"
-              element={
-                <Private>
-                  <MyShelf />
-                </Private>
-              }
-            />
-            <Route
-              path="*"
-              element={
-                <Private>
-                  <PageError />
-                </Private>
-              }
-            />
-          </Route>
-          <Route path="/login" element={<Login></Login>}></Route>
-        </Routes>
+        <QueryClientProvider client={queryClient}>
+          <Routes>
+            <Route element={<Theme></Theme>}>
+              <Route
+                index
+                element={
+                  <Private>
+                    <Home></Home>
+                  </Private>
+                }
+              />
+              <Route
+                path="/favoritos"
+                element={
+                  <Private>
+                    <Favorite />
+                  </Private>
+                }
+              />
+              <Route
+                path="/categoria"
+                element={
+                  <Private>
+                    <Categories />
+                  </Private>
+                }
+              ></Route>
+              <Route
+                path="/estante"
+                element={
+                  <Private>
+                    <MyShelf />
+                  </Private>
+                }
+              />
+              <Route
+                path="*"
+                element={
+                  <Private>
+                    <PageError />
+                  </Private>
+                }
+              />
+            </Route>
+            <Route path="/login" element={<Login></Login>}></Route>
+          </Routes>
+        </QueryClientProvider>
       </AuthProvider>
     </BrowserRouter>
   );

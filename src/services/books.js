@@ -13,4 +13,4 @@ async function patchBooks(id, favoriteBoolean) {
   });
 }
 
-export { getBooks, patchBooks };
+export { getBooks, patchBooks, booksAPI };
