@@ -12,6 +12,7 @@ export const SectionStyled = styled.section`
   z-index: 0;
   filter: ${(props) => (props.clicktrue ? 'brightness(0.1)' : 'brightness(1)')};
   transition: 1s;
+  padding-top: 100px;
 `;
 
 export const SubTitleStyled = styled.h2`
