@@ -1,4 +1,4 @@
-import { SectionStyled, SubTitleStyled } from './styles';
+import * as S from './styles';
 
 export default function Section({
   children,
@@ -9,13 +9,13 @@ export default function Section({
   subtitle
 }) {
   return (
-    <SectionStyled
+    <S.SectionStyled
       fontColor={fontColor}
       backgroundColor={backgroundColor}
       clicktrue={clicktrue}
     >
-      <SubTitleStyled subtitle={subtitle}>{title}</SubTitleStyled>
+      <S.SubTitleStyled subtitle={subtitle}>{title}</S.SubTitleStyled>
       {children}
-    </SectionStyled>
+    </S.SectionStyled>
   );
 }

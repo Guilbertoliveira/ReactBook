@@ -1,13 +1,13 @@
-import { FooterStyled, FooterLinkStyled } from './styles';
+import * as S from './styles';
 
 export default function Footer() {
   return (
-    <FooterStyled>
+    <S.FooterStyled>
       <p>Projeto feito por Guilbert</p>
       <p>Esse projeto faz parte do projeto fullstack feito por mim</p>
-      <FooterLinkStyled href="https://github.com/Guilbertoliveira/ReactBook">
+      <S.FooterLinkStyled href="https://github.com/Guilbertoliveira/ReactBook">
         Github
-      </FooterLinkStyled>
-    </FooterStyled>
+      </S.FooterLinkStyled>
+    </S.FooterStyled>
   );
 }

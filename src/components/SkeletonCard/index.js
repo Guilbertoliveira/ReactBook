@@ -1,31 +1,24 @@
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
-import {
-  CardStyled,
-  ImgStyled,
-  DivFavoriteStyled,
-  PStyled,
-  TitleStyled,
-  CategoryStyled,
-} from './styles';
+import * as S from './styles';
 
 export function SkeletonCard() {
   return (
-    <CardStyled>
-      <DivFavoriteStyled>
+    <S.CardStyled>
+      <S.DivFavoriteStyled>
         {
           <AiFillStar
             title="desfavoritar"
             style={{ fontSize: 26, color: 'rgba(221, 221, 223, 0.3)' }}
           ></AiFillStar>
         }
-        <TitleStyled></TitleStyled>
-      </DivFavoriteStyled>
+        <S.TitleStyled></S.TitleStyled>
+      </S.DivFavoriteStyled>
 
       <div>
-        <ImgStyled src=""></ImgStyled>
-        <PStyled>teste</PStyled>
-        <CategoryStyled>teste</CategoryStyled>
+        <S.ImgStyled src=""></S.ImgStyled>
+        <S.PStyled>teste</S.PStyled>
+        <S.CategoryStyled>teste</S.CategoryStyled>
       </div>
-    </CardStyled>
+    </S.CardStyled>
   );
 }
