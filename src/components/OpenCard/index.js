@@ -1,15 +1,5 @@
 import { useEffect } from 'react';
-import {
-  OpenCardStyled,
-  CardStyled,
-  ImgCardStyled,
-  DivDescribeStyled,
-  TitleStyled,
-  PStyled,
-  PCategoryStyled,
-  SpanStyled,
-  ButtonStyled,
-} from './styles';
+import * as S from './styles';
 import { useState } from 'react';
 
 export default function OpenCard({ dataBookOpen, clickOpen, setClickOpen }) {
@@ -32,19 +22,19 @@ export default function OpenCard({ dataBookOpen, clickOpen, setClickOpen }) {
   }
 
   return (
-    <OpenCardStyled>
-      <ButtonStyled onClick={clickOpenBook}>Fechar</ButtonStyled>
-      <CardStyled>
-        <ImgCardStyled src={bookOpen.url} alt={bookOpen.alt}></ImgCardStyled>
+    <S.OpenCardStyled>
+      <S.ButtonStyled onClick={clickOpenBook}>Fechar</S.ButtonStyled>
+      <S.CardStyled>
+        <S.ImgCardStyled src={bookOpen.url} alt={bookOpen.alt}></S.ImgCardStyled>
 
-        <DivDescribeStyled>
-          <TitleStyled>{bookOpen.name}</TitleStyled>
-          <PStyled>{bookOpen.desc}</PStyled>
-          <SpanStyled>
-            <PCategoryStyled>{bookOpen.category}</PCategoryStyled>
-          </SpanStyled>
-        </DivDescribeStyled>
-      </CardStyled>
-    </OpenCardStyled>
+        <S.DivDescribeStyled>
+          <S.TitleStyled>{bookOpen.name}</S.TitleStyled>
+          <S.PStyled>{bookOpen.desc}</S.PStyled>
+          <S.SpanStyled>
+            <S.PCategoryStyled>{bookOpen.category}</S.PCategoryStyled>
+          </S.SpanStyled>
+        </S.DivDescribeStyled>
+      </S.CardStyled>
+    </S.OpenCardStyled>
   );
 }

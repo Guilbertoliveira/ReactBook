@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { NavStyled, ListStyled, LiStyled } from './styles';
+import * as S from './styles';
 import { useEffect, useState } from 'react';
 
 export default function NavOptions() {
@@ -26,19 +26,19 @@ export default function NavOptions() {
   }, []);
 
   return (
-    <NavStyled>
-      <ListStyled>
+    <S.NavStyled>
+      <S.ListStyled>
         {textOptions.map((text, index) => (
-          <LiStyled key={index}>
+          <S.LiStyled key={index}>
             <Link
               to={text.url}
               style={{ textDecoration: 'none', color: scrollColor }}
             >
               {text.titleNav}
             </Link>
-          </LiStyled>
+          </S.LiStyled>
         ))}
-      </ListStyled>
-    </NavStyled>
+      </S.ListStyled>
+    </S.NavStyled>
   );
 }

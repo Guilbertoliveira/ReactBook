@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { MenuStyled, NavStyled, LiStyled } from './styles';
+import * as S from './styles';
 import { useContext } from 'react';
 import { AuthContext } from 'context/auth';
 
@@ -17,20 +17,20 @@ export default function Menu() {
   }
 
   return (
-    <MenuStyled>
-      <NavStyled>
+    <S.MenuStyled>
+      <S.NavStyled>
         {textOptions.map((text, index) => (
-          <LiStyled key={index}>
+          <S.LiStyled key={index}>
             <Link
               to={text.url}
               style={{ textDecoration: 'none', color: 'white' }}
             >
               {text.titleNav}
             </Link>
-          </LiStyled>
+          </S.LiStyled>
         ))}
-      </NavStyled>
+      </S.NavStyled>
       <button onClick={handleLogout}>Logout</button>
-    </MenuStyled>
+    </S.MenuStyled>
   );
 }

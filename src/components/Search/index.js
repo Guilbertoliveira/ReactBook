@@ -1,12 +1,5 @@
 import { Input } from 'components/Input';
-import {
-  SearchStyled,
-  SubTitleStyled,
-  TitleStyled,
-  ShowcaseBookStyled,
-  InputSpanStyled,
-  ButtonStyled,
-} from './styles';
+import * as S from './styles';
 import { useEffect, useState } from 'react';
 import Card from 'components/Card';
 import { getBooks, patchBooks } from 'services/books';
@@ -55,9 +48,9 @@ export default function Search() {
 
   return (
     <>
-      <SearchStyled clicktrue={clickOpen}>
-        <TitleStyled>{randomPhrases()}</TitleStyled>
-        <InputSpanStyled>
+      <S.SearchStyled clicktrue={clickOpen}>
+        <S.TitleStyled>{randomPhrases()}</S.TitleStyled>
+        <S.InputSpanStyled>
           <Input
             placeholder="Escreva sua próxima leitura"
             value={searchValue}
@@ -66,8 +59,8 @@ export default function Search() {
             }}
           />
           <ButtonVoice returnVoice={returnVoice}></ButtonVoice>
-        </InputSpanStyled>
-        <ShowcaseBookStyled>
+        </S.InputSpanStyled>
+        <S.ShowcaseBookStyled>
           {filteredBooks.length >= 1 ? (
             filteredBooks.map((item) => {
               return (
@@ -86,14 +79,14 @@ export default function Search() {
             })
           ) : (
             <div>
-              <TitleStyled>Livro procurado não foi encontrado</TitleStyled>
-              <ButtonStyled onClick={() => setSearchValue('')}>
+              <S.TitleStyled>Livro procurado não foi encontrado</S.TitleStyled>
+              <S.ButtonStyled onClick={() => setSearchValue('')}>
                 Voltar
-              </ButtonStyled>
+              </S.ButtonStyled>
             </div>
           )}
-        </ShowcaseBookStyled>
-      </SearchStyled>
+        </S.ShowcaseBookStyled>
+      </S.SearchStyled>
       {clickOpen && (
         <OpenCard
           dataBookOpen={dataBookOpen}

@@ -1,15 +1,15 @@
 import Section from "components/Section"
-import { LoadingStyled, LoadingAnimation } from "./styles"
+import * as S from "./styles"
 
 export default function LoadingModal() {
     return (
-        <LoadingStyled>
+        <S.LoadingStyled>
             <Section subtitle={false}>
-                <LoadingAnimation></LoadingAnimation>
+                <S.LoadingAnimation></S.LoadingAnimation>
                 <h2>Loading ...</h2>
                 Atualizando Aguarda ai ansioso! xD
             </Section>
 
-        </LoadingStyled>
+        </S.LoadingStyled>
     )
 }
