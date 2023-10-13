@@ -3,13 +3,16 @@ import PageError from 'pages/Error';
 import Favorite from 'pages/Favorite';
 import Home from 'pages/Home';
 import MyShelf from 'pages/MyShelf';
-import Theme from 'pages/Theme';
+import Theme from 'pages/Theme/ThemeMain/ThemeMain';
 import Login from 'pages/Login';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 import { AuthContext, AuthProvider } from 'context/auth';
 import { useContext } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query'
+import Register from 'pages/Register';
+import ThemeLogin from 'pages/Theme/ThemeLogin/ThemeLogin';
+import ThemeMain from 'pages/Theme/ThemeMain/ThemeMain';
 
 
 
@@ -35,7 +38,7 @@ export default function RoutesPage() {
       <AuthProvider>
         <QueryClientProvider client={queryClient}>
           <Routes>
-            <Route element={<Theme></Theme>}>
+            <Route element={<ThemeMain></ThemeMain>}>
               <Route
                 index
                 element={
@@ -77,7 +80,10 @@ export default function RoutesPage() {
                 }
               />
             </Route>
-            <Route path="/login" element={<Login></Login>}></Route>
+            <Route element={<ThemeLogin></ThemeLogin>}>
+              <Route path="/login" element={<Login></Login>}></Route>
+              <Route path="/cadastro" element={<Register></Register>}></Route>
+            </Route>
           </Routes>
         </QueryClientProvider>
       </AuthProvider>

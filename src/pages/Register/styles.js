@@ -13,8 +13,7 @@ export const FormStyled = styled.form`
   border-radius: 40px;
   font-family: 'Acme', sans-serif;
   background-color: rgba(0, 47, 82, 0.89);
-  gap: 10px
-
+  gap: 10px;
 `;
 
 export const SectionStyled = styled.section`
