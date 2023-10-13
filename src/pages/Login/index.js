@@ -1,13 +1,9 @@
 import { useState } from 'react';
-import {
-  FormStyled,
-  SectionStyled,
-  EmailStyled,
-  PasswordStyled,
-  ButtonStyled,
-} from './styles';
+import * as S from './styles';
 import { useContext } from 'react';
 import { AuthContext } from 'context/auth';
+import Register from 'pages/Register';
+import { Link } from 'react-router-dom';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -22,27 +18,31 @@ export default function Login() {
     setPassword('');
   }
 
+
+
+
   return (
-    <SectionStyled>
-      <FormStyled onSubmit={handleSubmit}>
-        <EmailStyled>
-          <label>Login</label>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          ></input>
-        </EmailStyled>
-        <PasswordStyled>
-          <label>Senha</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          ></input>
-        </PasswordStyled>
-        <ButtonStyled>Entrar</ButtonStyled>
-      </FormStyled>
-    </SectionStyled>
+    <S.FormStyled onSubmit={handleSubmit}>
+      <S.EmailStyled>
+        <label>Login</label>
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        ></input>
+      </S.EmailStyled>
+      <S.PasswordStyled>
+        <label>Senha</label>
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        ></input>
+      </S.PasswordStyled>
+      <S.ButtonStyled>Entrar</S.ButtonStyled>
+      <Link to='/cadastro' style={{ color: 'white' }}>Ainda não possui uma conta? Cadastre-se!</Link>
+    </S.FormStyled>
+
+
   );
 }
